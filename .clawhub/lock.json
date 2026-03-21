@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "skills": {
+    "capability-evolver": {
+      "version": "1.29.9",
+      "installedAt": 1773594511652
+    },
+    "auto-skill-hunter": {
+      "version": "1.0.3",
+      "installedAt": 1773594513730
+    },
+    "b2c-marketing": {
+      "version": "2.0.6",
+      "installedAt": 1773594970853
+    },
+    "byterover": {
+      "version": "2.0.0",
+      "installedAt": 1773594517446
+    },
+    "tavily": {
+      "version": "1.0.0",
+      "installedAt": 1773594528678
+    },
+    "session-logs": {
+      "version": "1.0.0",
+      "installedAt": 1773594972453
+    },
+    "firecrawl-search": {
+      "version": "1.0.0",
+      "installedAt": 1773596576779
+    }
+  }
+}

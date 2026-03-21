@@ -1,0 +1,368 @@
+{
+  "report_timestamp": "2026-03-18T22:59:00Z",
+  "infrastructure_status": "OPERATIONAL",
+  "assessment_level": "COMPREHENSIVE_TECHNICAL",
+  
+  "1_services_running": {
+    "core_agent_platform": {
+      "service_name": "nova.service",
+      "status": "active (running)",
+      "uptime": "3 days 14 hours",
+      "memory_usage": "458.1M (peak: 521.0M)",
+      "process_count": 20,
+      "restart_enabled": true,
+      "description": "OpenClaw / Lyyte AI Agent platform"
+    },
+    "system_services": {
+      "container_runtime": "Docker + containerd active",
+      "ssh": "OpenSSH active on port 22",
+      "system_logging": "rsyslog active",
+      "dns_resolution": "systemd-resolved active",
+      "time_sync": "systemd-timesyncd active",
+      "periodic_tasks": "cron active"
+    },
+    "agents_deployed": {
+      "count": 5,
+      "list": [
+        {
+          "id": "main",
+          "model": "openrouter/anthropic/claude-haiku-4.5",
+          "workspace": "/home/simon/.openclaw/workspace",
+          "default": true,
+          "status": "active"
+        },
+        {
+          "id": "clio",
+          "model": "openrouter/deepseek/deepseek-chat",
+          "workspace": "/home/simon/.openclaw/workspace-clio",
+          "status": "active",
+          "telegram_account": "dedicated"
+        },
+        {
+          "id": "linus",
+          "model": "openrouter/anthropic/claude-3.5-sonnet",
+          "workspace": "/home/simon/.openclaw/workspace-linus",
+          "status": "active"
+        },
+        {
+          "id": "ada",
+          "model": "openrouter/qwen/qwen-2.5-coder-32b-instruct",
+          "workspace": "/home/simon/.openclaw/workspace-ada",
+          "status": "active"
+        },
+        {
+          "id": "nico",
+          "model": "openrouter/deepseek/deepseek-chat",
+          "workspace": "/home/simon/.openclaw/workspace-nico",
+          "status": "active"
+        }
+      ]
+    },
+    "communication_channels": {
+      "telegram": {
+        "status": "enabled",
+        "default_bot": "Nova (@Clio_COS_Lyyte_Bot)",
+        "secondary_bot": "Clio (dedicated account)",
+        "group_policy": "open",
+        "streaming": "partial"
+      }
+    },
+    "database_connectivity": {
+      "supabase": "connected",
+      "url": "https://efoaenvzrsvhlrriftdx.supabase.co",
+      "status": "verified (REST API accessible)"
+    }
+  },
+
+  "2_cost_profile": {
+    "infrastructure_summary": {
+      "vps_provider": "Unknown (likely Linode, Digital Ocean, or AWS) - srv1476702 hostname",
+      "node_name": "srv1476702",
+      "host_runtime": "Linux 6.8.0-106-generic (Ubuntu 24.04.4 LTS)",
+      "current_status": "Cannot determine from VPS - credentials/billing not in scope"
+    },
+    "hardware_specs": {
+      "cpu_cores": 2,
+      "total_memory": "7.8 GB",
+      "disk_total": "96 GB",
+      "disk_allocated": "/dev/sda1 with 91GB available"
+    },
+    "resource_utilization": {
+      "timestamp": "2026-03-18T22:58:47Z",
+      "memory": {
+        "total_gb": 7.8,
+        "used_gb": 1.0,
+        "available_gb": 6.8,
+        "utilization_percent": 12.7,
+        "status": "excellent"
+      },
+      "cpu": {
+        "load_1min": 0.10,
+        "load_5min": 0.04,
+        "load_15min": 0.01,
+        "idle_percent": 100.0,
+        "status": "minimal utilization"
+      },
+      "disk": {
+        "root_used_percent": 6,
+        "root_available_gb": 91,
+        "boot_used_percent": 15,
+        "status": "very healthy"
+      },
+      "swap": "0GB (none configured)"
+    },
+    "service_resource_usage": {
+      "nova_agent_platform": {
+        "resident_memory_mb": 458,
+        "peak_memory_mb": 521,
+        "cpu_seconds": 10.4,
+        "process_threads": 20
+      },
+      "system_overhead": {
+        "description": "Minimal - kernel and core services only",
+        "estimated_mb": 200
+      }
+    },
+    "network_services": {
+      "listening_ports": [
+        {"port": 22, "service": "SSH", "protocol": "tcp", "exposed": true},
+        {"port": 53, "service": "DNS", "protocol": "tcp", "exposed_locally": true},
+        {"port": 18789, "service": "openclaw-gateway", "protocol": "tcp/tcp6", "exposed_locally": true}
+      ]
+    },
+    "estimated_monthly_cost": {
+      "note": "Estimated based on typical 2-core, 8GB VPS pricing",
+      "assumptions": [
+        "Low-tier VPS (~$5-15/month)",
+        "Standard Linux distribution",
+        "OpenRouter API usage for LLM calls (pay-per-use)",
+        "Supabase free/starter tier (likely)"
+      ],
+      "cost_breakdown": {
+        "vps_base_monthly": "5-15 USD",
+        "openrouter_api_usage": "Variable - depends on agent call volume",
+        "supabase_tier": "0-25 USD (likely free tier or starter)",
+        "bandwidth": "Likely included or minimal",
+        "estimated_total": "10-50 USD/month"
+      },
+      "exposure_risk": "MODERATE - OpenRouter API costs could spike with high agent usage"
+    }
+  },
+
+  "3_risks_identified": {
+    "security_risks": {
+      "critical": [
+        {
+          "id": "SEC-001",
+          "title": "Exposed API Keys in Source Code",
+          "severity": "CRITICAL",
+          "description": "OpenRouter API key found in openclaw.json (sk-or-v1-...)",
+          "evidence": "***REMOVED***",
+          "impact": "Attacker can abuse API quota, cause billing damage",
+          "recommendation": "Rotate immediately. Use environment variables or secure vault.",
+          "remediation_effort": "HIGH"
+        },
+        {
+          "id": "SEC-002",
+          "title": "Supabase Key in Plain Text Script",
+          "severity": "CRITICAL",
+          "description": "Supabase API key exposed in supabase_read.py file",
+          "evidence": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+          "impact": "Direct database access compromise",
+          "recommendation": "Rotate key. Use .env files or OpenClaw credential store.",
+          "remediation_effort": "HIGH"
+        },
+        {
+          "id": "SEC-003",
+          "title": "Telegram Bot Tokens in Config",
+          "severity": "CRITICAL",
+          "description": "Two Telegram bot tokens exposed in openclaw.json",
+          "evidence": "8787658612:AAHDc... and 8640983488:AAHMw...",
+          "impact": "Account takeover, bot spam, message interception",
+          "recommendation": "Rotate both bot tokens. Move to environment variables.",
+          "remediation_effort": "HIGH"
+        },
+        {
+          "id": "SEC-004",
+          "title": "No Firewall Protection",
+          "severity": "HIGH",
+          "description": "UFW and fail2ban not installed/configured",
+          "evidence": "SSH open on port 22 with no rate limiting",
+          "impact": "Brute force attacks on SSH",
+          "recommendation": "Enable UFW and configure fail2ban for SSH protection",
+          "remediation_effort": "MEDIUM"
+        },
+        {
+          "id": "SEC-005",
+          "title": "OpenClaw Gateway on Loopback Only",
+          "severity": "MEDIUM",
+          "description": "Gateway bound to 127.0.0.1 - good isolation, but verify intentional",
+          "evidence": "Port 18789/18791/18792 listening on loopback",
+          "impact": "No remote access to gateway (likely intentional)",
+          "recommendation": "Document as intentional. Verify no unintended exposure.",
+          "remediation_effort": "LOW"
+        }
+      ],
+      "high": [
+        {
+          "id": "SEC-006",
+          "title": "No Backup Strategy Documented",
+          "severity": "HIGH",
+          "description": "No cron jobs or backup services visible",
+          "evidence": "unattended-upgrades service running but no backup daemon",
+          "impact": "Data loss if VPS fails",
+          "recommendation": "Implement daily automated backups to S3 or remote store",
+          "remediation_effort": "MEDIUM"
+        },
+        {
+          "id": "SEC-007",
+          "title": "Minimal SSH Hardening",
+          "severity": "MEDIUM",
+          "description": "SSH on standard port 22, no evidence of key-only auth documented",
+          "evidence": "Failed sudo auth attempts in journals indicate password auth attempts",
+          "impact": "Slightly elevated brute force risk",
+          "recommendation": "Consider port 2222, disable password auth, require SSH keys",
+          "remediation_effort": "MEDIUM"
+        }
+      ]
+    },
+    "performance_risks": {
+      "medium": [
+        {
+          "id": "PERF-001",
+          "title": "Single-Core Task Bottleneck",
+          "severity": "MEDIUM",
+          "description": "Only 2 CPU cores; multiple agents could contend for resources",
+          "evidence": "Current load 0.1 is minimal, but growth will saturate quickly",
+          "impact": "Agent response latency, timeouts during peak usage",
+          "recommendation": "Monitor CPU load. Plan upgrade to 4-core if >50% sustained load",
+          "remediation_effort": "MEDIUM"
+        },
+        {
+          "id": "PERF-002",
+          "title": "No Swap Space",
+          "severity": "MEDIUM",
+          "description": "Swap is 0GB; OOM kills instead of graceful degradation",
+          "evidence": "Swap: 0.0 total",
+          "impact": "Agent process crashes if memory exhausted",
+          "recommendation": "Add 2-4GB swap or upgrade to larger instance",
+          "remediation_effort": "MEDIUM"
+        }
+      ]
+    },
+    "scalability_risks": {
+      "high": [
+        {
+          "id": "SCALE-001",
+          "title": "No Load Balancing or Redundancy",
+          "severity": "HIGH",
+          "description": "Single-node deployment; no failover or HA setup",
+          "evidence": "One srv1476702 instance running all agents",
+          "impact": "Complete outage if VPS fails",
+          "recommendation": "Plan multi-node deployment or standby replica in future",
+          "remediation_effort": "HIGH"
+        },
+        {
+          "id": "SCALE-002",
+          "title": "API Cost Scaling",
+          "severity": "HIGH",
+          "description": "5 agents on OpenRouter pay-per-use could cause runaway costs",
+          "evidence": "Multiple LLM models with no usage limits documented",
+          "impact": "Unexpected $100s-1000s in monthly bills",
+          "recommendation": "Set OpenRouter usage caps, monitor daily spend, implement rate limits",
+          "remediation_effort": "MEDIUM"
+        },
+        {
+          "id": "SCALE-003",
+          "title": "Supabase Free Tier Limits",
+          "severity": "MEDIUM",
+          "description": "Unknown if on free or paid Supabase tier",
+          "evidence": "linus_infra table write required but no tier documented",
+          "impact": "Query/storage limits could cause outages",
+          "recommendation": "Verify Supabase tier, plan upgrade path",
+          "remediation_effort": "LOW"
+        }
+      ]
+    },
+    "operational_risks": {
+      "high": [
+        {
+          "id": "OPS-001",
+          "title": "No Monitoring or Alerting",
+          "severity": "HIGH",
+          "description": "No evidence of Prometheus, DataDog, or other monitoring",
+          "evidence": "Manual inspection required to assess health",
+          "impact": "Outages go unnoticed for hours",
+          "recommendation": "Deploy Grafana + Prometheus or use cloud monitoring (DataDog, New Relic)",
+          "remediation_effort": "MEDIUM"
+        },
+        {
+          "id": "OPS-002",
+          "title": "No Log Aggregation",
+          "severity": "MEDIUM",
+          "description": "Logs only on local rsyslog, no centralized store",
+          "evidence": "journalctl shows local logs only",
+          "impact": "Log loss if disk fails, hard to debug distributed issues",
+          "recommendation": "Send logs to ELK, Loki, or cloud logging (CloudWatch, Stackdriver)",
+          "remediation_effort": "MEDIUM"
+        },
+        {
+          "id": "OPS-003",
+          "title": "No Disaster Recovery Plan",
+          "severity": "HIGH",
+          "description": "No documented RTO/RPO or recovery procedures",
+          "evidence": "No backup service visible",
+          "impact": "Extended recovery time if data loss occurs",
+          "recommendation": "Document RTO/RPO targets, implement backup+restore testing",
+          "remediation_effort": "HIGH"
+        }
+      ]
+    },
+    "budget_exposure": {
+      "severity": "HIGH",
+      "concerns": [
+        {
+          "id": "BUDGET-001",
+          "title": "Uncontrolled OpenRouter API Spend",
+          "estimate": "Could exceed $100-1000/month without caps",
+          "example": "5 agents × 10 calls/hour × 24 hours = 1,200 calls/day = ~36,000 calls/month. At $0.01-0.05 per call = $360-1800/month",
+          "current_spend": "Unknown - no rate limiting visible",
+          "recommendation": "Implement per-agent quotas, daily spend alerts, and hard caps"
+        },
+        {
+          "id": "BUDGET-002",
+          "title": "Supabase Cost Growth",
+          "estimate": "Could reach $50-500/month if data grows",
+          "current_tier": "Unknown (likely free tier)",
+          "recommendation": "Review Supabase billing, set alerts, plan tier upgrade"
+        },
+        {
+          "id": "BUDGET-003",
+          "title": "VPS Cost Inflation",
+          "estimate": "$5-50/month base, could spike with traffic",
+          "recommendation": "Monitor bandwidth, plan for auto-scaling if needed"
+        }
+      ],
+      "total_exposure": "Estimated $50-3000/month depending on usage patterns"
+    }
+  },
+
+  "summary": {
+    "overall_health": "OPERATIONAL_WITH_CRITICAL_SECURITY_ISSUES",
+    "uptime": "3 days 14 hours (stable)",
+    "resource_utilization": "Very healthy (12% memory, <1% CPU)",
+    "critical_issues_count": 5,
+    "high_priority_issues_count": 8,
+    "medium_priority_issues_count": 4,
+    "recommended_actions": [
+      "IMMEDIATE: Rotate all exposed API keys and Telegram tokens",
+      "URGENT: Move secrets to environment variables or OpenClaw credential store",
+      "HIGH: Enable firewall (UFW) and fail2ban on SSH",
+      "HIGH: Implement monitoring and alerting (Grafana/Prometheus or cloud service)",
+      "HIGH: Set OpenRouter API spending caps and daily alerts",
+      "MEDIUM: Add backup strategy (daily to S3)",
+      "MEDIUM: Document SSH hardening and disable password auth",
+      "MEDIUM: Plan for redundancy if uptime SLA required"
+    ]
+  }
+}

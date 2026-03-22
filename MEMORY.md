@@ -10,7 +10,7 @@
 |-------|------|-------|--------|
 | **Nova** | CEO | MiniMax M2.5 | ✅ Active now |
 | **Linus** | CTO | Kimi K2 Thinking | ✅ Active now |
-| **Clio** | Research/Watchdog | DeepSeek V3 | ✅ Active now |
+| **Clio** | Research/Watchdog | GLM-4.7-Flash | ✅ Active now |
 | **Ada** | Senior Dev/Reviewer | Claude Haiku 4.5 | ✅ Active now |
 | **Nico** | Builder | MiMo-V2-Flash | ✅ Active now |
 
@@ -27,22 +27,32 @@
 - **Clio:** Research + watchdog
 
 ## Team Session Keys
+
 - Clio: agent:clio:telegram:direct:705078761
 - Ada: agent:ada:telegram:direct:705078761
 - Nico: agent:nico:telegram:direct:705078761
 - Linus: agent:linus:telegram:direct:705078761
 
-## Supabase Credentials
-- URL: https://efoaenvzrsvhlrriftdx.supabase.co
-- Anon Key: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVmb2FlbnZ6cnN2aGxycmlmdGR4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM1NjczNTgsImV4cCI6MjA4OTE0MzM1OH0.k7XslO-8Kjf58oAQDRFMSai57x5GhzN2jDhESQocfSI
-
-## 48h Stability Plan (Priority)
-1. Supabase ownership (agents own their writes)
-2. Kanban flow clean
-3. Reflection cycle autonomous
-4. Sessions_send reliability
-
 ## Key Learnings
 - Build on proven foundation, not assumptions
 - Validation before building (Mom Test)
-- Org stability before product build
+
+## Brand Structure (2026-03-21)
+**CRITICAL DISTINCTION:**
+- **Lyyte** = company umbrella
+- **Blockriculture** = first product (demo/case study)
+- **SDK** = separate product with its own name (NOT Lyyte)
+
+The webhook-driven intelligence layer SDK needs its own brand identity. Blockriculture proves the concept. The SDK sells to developers.
+
+Clio's research should reflect this: webhook orchestration competitive landscape for the SDK product, NOT for Lyyte company.
+
+## Brand Structure (Updated 2026-03-21 14:20 UTC)
+**CRITICAL — OFFICIAL NAMES:**
+- **Lyyte** = company umbrella
+- **Blockriculture** = first product (demo/case study)
+- **Hyphaly** = the SDK (agent messaging + webhook SDK)
+
+**Install pattern:** npm install @hyphaly/agent-sdk
+
+This is locked. All future references use these exact names.

@@ -1,17 +1,1 @@
-{
-  "lastChecks": {
-    "nova_tasks": "2026-03-20T20:00:00Z",
-    "layer_status": "2026-03-20T20:00:00Z"
-  },
-  "status": "🚨 SYSTEM OUTAGE — NO RESPONSE FROM SIMON",
-  "failures": [
-    "Layer 3 (3am): FAILED — 2026-03-20",
-    "Layer 2 (8am): FAILED — 2026-03-20",
-    "Layer 2 (2pm): FAILED — 2026-03-20",
-    "Layer 2 (8pm): FAILED — 2026-03-20 (20:00 UTC check)"
-  ],
-  "cron_offline_duration": "14+ hours (entire day)",
-  "clio_silent_duration": "12 hours 44 minutes",
-  "prior_escalation": "Emergency escalated 14:07 UTC (6 hours ago). No response.",
-  "action": "All critical alerts logged to nova_tasks. Awaiting Simon to restart infrastructure and investigate cron failures."
-}
+{"lastChecks":{"nova_tasks":"2026-03-22T00:21:00Z","clio_status":"2026-03-22T00:21:00Z"},"status":"check_complete","clio_last_active":"2026-03-21T18:57:31Z","clio_status":"active","notes":"Clio active 5.4h ago during work hours - normal. No alerts needed."}

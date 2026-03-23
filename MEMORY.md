@@ -5,54 +5,47 @@
 
 **Validation Status:** ⏳ PENDING. 5 target leads identified. Real Mom Test interviews required.
 
-## Final Model Stack (2026-03-20 22:51 UTC)
+## Final Model Stack (2026-03-20)
 | Agent | Role | Model | Status |
 |-------|------|-------|--------|
-| **Nova** | CEO | MiniMax M2.5 | ✅ Active now |
-| **Linus** | CTO | Kimi K2 Thinking | ✅ Active now |
-| **Clio** | Research/Watchdog | GLM-4.7-Flash | ✅ Active now |
-| **Ada** | Senior Dev/Reviewer | Claude Haiku 4.5 | ✅ Active now |
-| **Nico** | Builder | MiMo-V2-Flash | ✅ Active now |
+| **Nova** | CEO | MiniMax M2.7 | ✅ Active |
+| **Linus** | CTO | Kimi K2.5 | ✅ Active |
+| **Clio** | Research/Watchdog | GLM-4.7-Flash | ✅ Active |
+| **Ada** | Senior Dev/Reviewer | Claude Haiku 4.5 | ✅ Active |
+| **Nico** | Builder | MiMo-V2-Flash | ✅ Active |
 
-**Permanent Exclusions:**
-- All Mistral models: INCOMPATIBLE (tool call ID format error)
-- Llama 4 Maverick: STALLS on coding profile
-- Llama 4 Scout: Rate limited
+**Exclusions:** All Mistral (tool call error), Llama 4 Maverick (stalls), Llama 4 Scout (rate limited)
 
 ## Role Structure
-- **Nova (CEO):** Strategy, delegation, founder education, market thinking
-- **Linus (CTO):** Technical decisions, architecture, manages build chain
-- **Ada:** Code reviewer (receives from Nico, reviews, sends to Linus for sign-off)
+- **Nova:** Strategy, delegation, founder education
+- **Linus:** Technical decisions, architecture
+- **Ada:** Code reviewer (Nico→Ada→Linus sign-off)
 - **Nico:** Builder (receives from Linus)
 - **Clio:** Research + watchdog
 
-## Team Session Keys
+## Brand Structure (LOCKED)
+- **Lyyte** = company umbrella
+- **Blockriculture** = first product (demo)
+- **Hyphaly** = SDK (agent messaging + webhooks)
+- Install: `npm install @hyphaly/agent-sdk`
 
-- Clio: agent:clio:telegram:direct:705078761
-- Ada: agent:ada:telegram:direct:705078761
-- Nico: agent:nico:telegram:direct:705078761
-- Linus: agent:linus:telegram:direct:705078761
+## Context (2026-03-22)
+- Credentials rotation: Monday priority
+- sessions_send reliability: ongoing infra issue
+- Domain: Hyphaly.com secured
+
+## Hyphaly Architecture (LOCKED)
+1. Multi-tenant from day one (isolated silos)
+2. Ephemeral messaging (route, don't store)
+3. Server-side handshake (moat)
+4. Proprietary message envelope
+
+**Pricing:** Free 1k msgs/mo → Pro £49/mo → Enterprise custom
 
 ## Key Learnings
 - Build on proven foundation, not assumptions
 - Validation before building (Mom Test)
-
-## Brand Structure (2026-03-21)
-**CRITICAL DISTINCTION:**
-- **Lyyte** = company umbrella
-- **Blockriculture** = first product (demo/case study)
-- **SDK** = separate product with its own name (NOT Lyyte)
-
-The webhook-driven intelligence layer SDK needs its own brand identity. Blockriculture proves the concept. The SDK sells to developers.
-
-Clio's research should reflect this: webhook orchestration competitive landscape for the SDK product, NOT for Lyyte company.
-
-## Brand Structure (Updated 2026-03-21 14:20 UTC)
-**CRITICAL — OFFICIAL NAMES:**
-- **Lyyte** = company umbrella
-- **Blockriculture** = first product (demo/case study)
-- **Hyphaly** = the SDK (agent messaging + webhook SDK)
-
-**Install pattern:** npm install @hyphaly/agent-sdk
-
-This is locked. All future references use these exact names.
+- Credentials rotate FIRST (not after)
+## Infrastructure (2026-03-22)
+- GitHub: github.com/Plainoldsimon/hyphaly (private)
+- Code separation: Hyphaly SDK → GitHub, Lyyte internal → workspaces

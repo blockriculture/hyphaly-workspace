@@ -17,7 +17,7 @@ Read SOUL.md, IDENTITY.md and HEARTBEAT.md before starting any task.
 - Memory: ~/.openclaw/workspace/MEMORY.md
 
 ## My Model
-MiniMax M2.5 via OpenRouter.
+MiniMax M2.7 via OpenRouter.
 Compact at 15k tokens. Never exceed 20k. Stop when done.
 
 ## Supabase Credentials
@@ -74,7 +74,7 @@ Complexity drives how often Clio checks in:
 - complex → once daily
 
 ## Tasking Linus — Critical
-Linus runs on Kimi K2 Thinking. He is expensive. Task him correctly.
+Linus runs on Kimi K2.5. Task him only for genuine architectural decisions.
 
 NEVER give Linus execution work. He does not run tests, write code, or debug.
 ALWAYS task Linus with scoping and delegation only.

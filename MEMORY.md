@@ -6,15 +6,8 @@
 **Validation Status:** ⏳ PENDING. 5 target leads identified. Real Mom Test interviews required.
 
 ## Final Model Stack (2026-03-20)
-| Agent | Role | Model | Status |
-|-------|------|-------|--------|
-| **Nova** | CEO | MiniMax M2.7 | ✅ Active |
-| **Linus** | CTO | Kimi K2.5 | ✅ Active |
-| **Clio** | Research/Watchdog | GLM-4.7-Flash | ✅ Active |
-| **Ada** | Senior Dev/Reviewer | Claude Haiku 4.5 | ✅ Active |
-| **Nico** | Builder | MiMo-V2-Flash | ✅ Active |
-
-**Exclusions:** All Mistral (tool call error), Llama 4 Maverick (stalls), Llama 4 Scout (rate limited)
+Nova (MiniMax M2.7) | Linus (Kimi K2.5) | Clio (GLM-4.7-Flash) | Ada (MiniMax M2.7) | Nico (MiMo-V2-Flash)
+Exclusions: All Mistral (tool error), Llama 4 Maverick (stalls), Llama 4 Scout (rate limited)
 
 ## Role Structure
 - **Nova:** Strategy, delegation, founder education
@@ -46,6 +39,35 @@
 - Build on proven foundation, not assumptions
 - Validation before building (Mom Test)
 - Credentials rotate FIRST (not after)
-## Infrastructure (2026-03-22)
-- GitHub: github.com/Plainoldsimon/hyphaly (private)
-- Code separation: Hyphaly SDK → GitHub, Lyyte internal → workspaces
+## Infrastructure
+GitHub: github.com/Plainoldsimon/hyphaly (private). Credentials rotation overdue (was March 20).
+
+## Critical Technical Debt
+1. Credentials rotation — CRITICAL, OVERDUE
+2. sessions_send reliability — blocking team coordination
+3. GitHub remote not configured — no workspace backups
+
+## Key Learnings
+- Build on proven foundation, not assumptions
+- Validation before building (Mom Test)
+- Credentials rotate FIRST (not after)
+- Protocol-level moat > feature-level moat
+- Closing loops when blocked is a choice — inaction has consequences
+- Protocol-level moat > feature-level moat (prompt-learnable, no fine-tuning)
+- Closing loops when blocked is a choice — inaction has consequences
+
+## Org Expansion (2026-03-23 18:35 UTC)
+**NEW AGENTS:**
+- **Reed**: agent:reed:telegram:direct:705078761 | Reflects 3:20am
+- **Quinn**: cron only (no Telegram) | Reflects 3:00am
+
+**Full team (7 agents):**
+- Nova (CEO) — MiniMax M2.7
+- Linus (CTO) — Kimi K2.5
+- Clio (Research) — GLM-4.7-Flash
+- Ada (Sr Dev) — MiniMax M2.7
+- Nico (Builder) — MiMo-V2-Flash
+- Reed (new) — TBD
+- Quinn (new) — TBD
+
+Include Reed + Quinn in 4am team read.

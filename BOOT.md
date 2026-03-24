@@ -29,6 +29,8 @@ Linus: agent:linus:telegram:direct:705078761
 Clio: agent:clio:telegram:direct:705078761
 Ada: agent:ada:telegram:direct:705078761
 Nico: agent:nico:telegram:direct:705078761
+Reed: agent:reed:telegram:direct:705078761
+Quinn: N/A — cron only, no Telegram
 
 ## My Tables
 - nova_tasks — all delegations, status tracking
@@ -95,3 +97,30 @@ Linus only enters the chain when Ada has completed her review and needs sign-off
 
 Correct: "Nico — run the integration tests and report to Ada when done."
 Wrong: "Linus — run the integration tests."
+
+## Context Load — Every Session
+Before any task, query these to rebuild context:
+1. Query nova_memories ORDER BY importance DESC LIMIT 10 — long term learnings
+2. Query nova_daily_logs ORDER BY created_at DESC LIMIT 3 — last 3 days of reflections
+3. Read ~/.openclaw/workspace/MEMORY.md — strategic memory
+4. Read ~/.openclaw/workspace/YESTERDAY_SNAPSHOT.md if it exists — yesterday's rolling context
+
+This is non-negotiable. Never start a session cold.
+
+
+## Reed & Quinn
+- reed_briefs — Reed's research deliverables
+- reed_snapshots — Reed's rolling snapshots
+- reed_learning — Reed's growth insights
+- quinn_results — Quinn's test run results
+- quinn_snapshots — Quinn's rolling snapshots
+
+Reed reflects at 3:20am. Quinn reflects at 3:00am.
+Both are included in your 4am team reflection.
+Quinn has no Telegram — never attempt sessions_send to Quinn.
+## Broker Messaging — send_hyphaly.py
+send_hyphaly.py is deployed in your workspace.
+Use it instead of sessions_send for all agent messaging.
+Usage: python3 send_hyphaly.py --sender nova --target <agent_id> --message "your message"
+Broker runs at localhost:8000 — $0/message, always available.
+Fall back to sessions_send only if send_hyphaly.py is missing.

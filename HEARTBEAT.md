@@ -71,16 +71,8 @@
 On every heartbeat check:
 - Check clio_snapshots in Supabase — has Clio written anything in the last 2 hours?
 - Check clio_commitments — any overdue items?
-- If Clio has been silent for more than 2 hours during working hours (08:00-22:00 UTC) — message Simon via Telegram with 🚨 Clio silent flag
-- If Clio completes a research task — review her clio_research entries and send her one sharpening question or piece of guidance via sessions_send
-
-This is a standing commitment. It does not need to be assigned each session.
-
-## Clio Monitoring (Standing Protocol)
-On every heartbeat check:
-- Check clio_snapshots in Supabase — has Clio written anything in the last 2 hours?
-- Check clio_commitments — any overdue items?
-- If Clio has been silent for more than 2 hours during working hours (08:00-22:00 UTC) — message Simon via Telegram with 🚨 Clio silent flag
+- **If Clio has a task due TODAY (tonight):** She is working toward that deadline. No nudge unless the task is genuinely past its delivery time.
+- **If Clio has been silent for 2+ hours during working hours (08:00-22:00 UTC) with NO active task or delivery window →** message Simon via Telegram with 🚨 Clio silent flag
 - If Clio completes a research task — review her clio_research entries and send her one sharpening question or piece of guidance via sessions_send
 
 This is a standing commitment. It does not need to be assigned each session.

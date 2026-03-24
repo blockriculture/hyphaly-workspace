@@ -1,1 +1,16 @@
-{"lastChecks":{"nova_tasks":"2026-03-23T01:56:00Z","clio_status":"2026-03-23T01:56:00Z"},"status":"check_complete","clio_last_active":"2026-03-22T03:48:41Z","clio_status":"idle","notes":"01:56 UTC Monday - quiet hours (23:00-08:00). Clio idle ~22h. No alerts sent. MEMORY.md 1971 chars OK. Credentials rotation Monday priority (today)."}
+{
+  "lastChecks": {
+    "nova_tasks": "2026-03-24T01:58:00Z",
+    "clio_status": "2026-03-24T01:58:00Z",
+    "git_status": "2026-03-24T01:58:00Z"
+  },
+  "status": "check_complete",
+  "clio_last_active": "2026-03-23T03:46:00Z",
+  "notes": "01:58 UTC Tuesday. Clio silent ~22 hours - her research tasks still show as 'blocked' in nova_tasks, she hasn't delivered tonight's research. Within quiet hours (01:58<08:00) - cannot alert Simon. Will check at next heartbeat. Workspace uncommitted changes persist (BOOT.md, HEARTBEAT.md, MEMORY.md, heartbeat-state.json). Credentials rotation still marked 'complete' in tasks but not verified - MEMORY.md still says overdue.",
+  "clio_monitoring_corrected": "Simon flagged: silent flag doesn't account for scheduled delivery windows. Clio delivers tonight for 4am reflection - no nudge needed until past delivery time.",
+  "flags": {
+    "clio_delivery_missed": "Clio was due 'tonight' (Mon night) but tasks show 'blocked' and no delivery made. ~22h silent as of 01:58 UTC Tue",
+    "credentials_unverified": "nova_tasks says 'complete' but result field empty and MEMORY.md still says overdue",
+    "git_backup_inconsistent": "cron shows failed but workspace has uncommitted changes"
+  }
+}

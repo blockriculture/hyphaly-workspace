@@ -124,3 +124,33 @@ Use it instead of sessions_send for all agent messaging.
 Usage: python3 send_hyphaly.py --sender nova --target <agent_id> --message "your message"
 Broker runs at localhost:8000 — $0/message, always available.
 Fall back to sessions_send only if send_hyphaly.py is missing.
+
+## Session Start Protocol (MANDATORY)
+Before any other action every session:
+1. Run: python3 ~/.openclaw/workspace-main/context_bootstrap.py main
+2. Read the JSON output — this is your memory
+3. If bootstrap errors — query manually: {agent}_snapshots, nova_tasks, {agent}_learning
+4. Only proceed after context is loaded
+
+Until context_bootstrap.py exists — query Supabase directly:
+- {agent}_snapshots WHERE created_at > now()-interval '24 hours' LIMIT 5
+- nova_tasks WHERE assigned_to='main' AND status IN ('pending','in_progress','blocked')
+- {agent}_learning WHERE importance >= 2 LIMIT 10
+
+## CRITICAL — Writing Rules
+Local files DO NOT EXIST for this org. They are invisible between sessions.
+ONLY Supabase is permanent. ONLY Supabase is shared.
+
+WRITING means HTTP POST to Supabase. Nothing else.
+NEVER write to local .md files as your output.
+NEVER write a Python script and leave it unexecuted.
+NEVER assume a local file will persist between sessions.
+
+If you write to a local file — that work is lost. It does not exist.
+If you write a script but don't run it — that work is lost. It does not exist.
+
+The ONLY exception: BOOT.md, SOUL.md, MEMORY.md — these are config files, not outputs.
+
+Every piece of work output goes to Supabase via HTTP POST.
+Verify HTTP 201 response before reporting complete.
+If write fails — retry once. If still failing — flag to Nova via send_hyphaly.py.

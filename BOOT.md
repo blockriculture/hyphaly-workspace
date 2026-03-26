@@ -127,12 +127,13 @@ Fall back to sessions_send only if send_hyphaly.py is missing.
 
 ## Session Start Protocol (MANDATORY)
 Before any other action every session:
-1. Run: python3 ~/.openclaw/workspace-main/context_bootstrap.py main
+1. Run: python3 ~/.openclaw/workspace-main/context_bootstrap_v2.py main
 2. Read the JSON output — this is your memory
-3. If bootstrap errors — query manually: {agent}_snapshots, nova_tasks, {agent}_learning
-4. Only proceed after context is loaded
+3. Drain your message queue: python3 ~/.openclaw/workspace-main/receive_hyphaly.py --agent main
+4. If bootstrap errors — query manually: {agent}_snapshots, nova_tasks, {agent}_learning
+5. Only proceed after context is loaded and queue is drained
 
-Until context_bootstrap.py exists — query Supabase directly:
+Until context_bootstrap_v2.py exists — query Supabase directly:
 - {agent}_snapshots WHERE created_at > now()-interval '24 hours' LIMIT 5
 - nova_tasks WHERE assigned_to='main' AND status IN ('pending','in_progress','blocked')
 - {agent}_learning WHERE importance >= 2 LIMIT 10

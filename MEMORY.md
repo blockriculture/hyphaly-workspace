@@ -30,6 +30,7 @@ Supabase (efoaenvzrsvhlrriftdx), Phase 1 poller (5min), HyphalyGuardian (60s), G
 - "Not my job" ≠ "not my problem" — watch for it
 - Closing loops when blocked is a choice — inaction has consequences
 - **Proof-before-action**: write to Supabase BEFORE executing. The write IS the execution. Causes infinite Jeeves retries otherwise.
+- **Supabase write → read-back verification**: writes can fail silently (timeout, rate limit, API error). Always read back and verify before reporting success. (Nico, 2026-03-23)
 - A2A loop confirmed working (Day 12 session keys fix)
 - **Production schema verification required before deployment** — Jeeves exp_field bug, nova_blockers schema mismatch, harvest window format T vs dash caused cascade failures. Verify every new daemon against actual Supabase schema before going live.
 

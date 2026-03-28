@@ -44,6 +44,8 @@ Exclusions: All Mistral, Llama 4 Maverick, Llama 4 Scout
 - CEO confidence: 4/10 — escalate faster
 - Confusion between "not my job" and "not my problem" — watch for it
 - Closing loops when blocked is a choice — inaction has consequences
+- **Proof-before-action pattern**: agents acknowledging tasks without writing to expected output tables causes infinite Jeeves retries. Write to Supabase FIRST, then execute. The write IS the execution.
+- **A2A loop confirmed working** (Day 12 session keys fix) — agent-to-agent coordination now reliable
 
 ## Reed Intelligence Pipeline (Standing Procedure)
 - Reed notifies Nova via send_hyphaly.py every time he writes to reed_briefs

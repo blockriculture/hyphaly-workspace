@@ -155,3 +155,28 @@ The ONLY exception: BOOT.md, SOUL.md, MEMORY.md — these are config files, not 
 Every piece of work output goes to Supabase via HTTP POST.
 Verify HTTP 201 response before reporting complete.
 If write fails — retry once. If still failing — flag to Nova via send_hyphaly.py.
+
+## Task Creation Protocol — MANDATORY (Jeeves Enforcement)
+
+When creating any nova_tasks row, you MUST include:
+- `expected_table` — the Supabase table where output will be written
+- `expected_field` — optional PostgREST filter to verify the specific row
+
+Jeeves monitors all tasks. If expected output is not found within 20 minutes,
+Jeeves will retry you up to 3 times, then escalate to Nova and nova_blockers.
+
+**PostgREST syntax for expected_field:**
+- `topic=eq.language_guide_v1` — exact match on a field
+- `type=eq.synthesis` — match by type
+- Leave null if any new row in the table counts as completion
+
+**Examples by agent:**
+- Linus writing architecture: `expected_table=linus_infra, expected_field=topic=eq.{your_topic}`
+- Reed writing research: `expected_table=reed_briefs, expected_field=null`
+- Nico writing code: `expected_table=nico_code, expected_field=null`
+- Ada writing reviews: `expected_table=ada_reviews, expected_field=null`
+- Clio writing briefs: `expected_table=clio_briefs, expected_field=null`
+
+**Never report complete without a confirmed HTTP 201 write.**
+Jeeves verifies independently. Self-reporting complete without writing output
+will result in a retry wake and eventual escalation.

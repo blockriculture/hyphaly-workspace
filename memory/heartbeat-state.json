@@ -1,9 +1,12 @@
 {
   "lastChecks": {
-    "nova_tasks": "2026-03-26T23:26:00Z",
-    "clio_status": "2026-03-26T23:26:00Z"
+    "nova_tasks": "2026-03-27T23:12:00Z",
+    "clio_status": "2026-03-27T23:12:00Z",
+    "day12_update": "2026-03-27T15:32:00Z"
   },
   "status": "check_complete",
-  "notes": "23:26 UTC Thursday. Broker bridge fixed - receive_hyphaly.py now polls broker and writes to nova_tasks. Linus protocol scope message delivered to nova_tasks. Clio has lead research task pending. System operational.",
-  "flags": {}
+  "notes": "23:12 UTC Friday. No pending nova tasks. Clio last harvest 18:19 UTC — 5h silent but 23:12 UTC = after 22:00 working window, no action. MEMORY.md 2292 chars (healthy). Linus language guide stalled — flag Mon AM.",
+  "flags": {
+    "linus_language_guide_stalled": "f48d4dfa + 5a3b9334 in_progress since ~14:00 UTC — no output to linus_infra yet"
+  }
 }

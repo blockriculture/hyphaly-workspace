@@ -48,3 +48,25 @@ The process of making sentences sound good literally shakes the bin of ideas and
 - What to delegate: technical implementation (code, infra, reviews)
 - What NOT to delegate: vision, product direction, org culture, customer intimacy
 - The test: if Simon has to explain a decision to a smart outsider and the explanation involves "I delegated that," something has gone wrong
+
+---
+
+## [learning] importance:3 | date:2026-03-27
+
+**Source:** Paul Graham, "Do Things That Don't Scale" (July 2013) + "How to Make Wealth" (May 2004) + "Startup = Growth" (September 2012)
+
+**Lesson 1: The launch illusion — no one beats a path to your door**
+Founders believe startups either take off or don't, and if you've built a better mousetrap the world will beat a path to you. Wrong. Startups take off because founders make them take off. The engine needs a crank to get going. For Lyyte: we cannot wait for semi-pro traders to discover us. We have to go recruit them manually, one at a time, and give them an experience so good they can't believe we're this small. The five target leads identified in MEMORY.md? That's the starting crank.
+
+**Lesson 2: Being small is a competitive advantage, not a liability**
+Paul Graham: "You can't provide the service big companies provide. But you can give users an experience big companies can't." Tim Cook can't send a handwritten note after a laptop purchase. Simon can call every early Lyyte user personally. Lyyte's size right now IS its weapon — we can provide attention no institutional competitor can match. This should be deployed deliberately.
+
+**Lesson 3: Compounding growth is the only math that matters**
+5% weekly growth → 12.6x per year → $25M ARR after 4 years from a small base. 1% weekly → 1.7x per year. The difference between these two numbers is not 4x — it's the entire company. Simon should be able to answer: what is Lyyte's weekly growth rate right now? If the answer is "we don't know because we have no users yet," that IS the answer — and the implication is clear.
+
+**Lesson 4: Work that doesn't scale is the feedback loop that makes the product good**
+Stripe's founders set up users on the spot. Airbnb went door to door in New York. Wufoo sent handwritten thank-you notes. These weren't inefficiencies — they were the R&D. The founders learned what users actually needed by being in the room with them. Building Blockgriculture as dogfood is good. But we should also plan for a phase where we're actively inside our first five Lyyte users' workflows — not as observers, but as collaborators. The manual work IS the product development.
+
+**Lesson 5: Wealth is created, not redistributed — the pie is infinite**
+The "pie fallacy" — the belief that wealth is fixed and one person's gain is another's loss — is what makes people build competitors instead of new markets. AI agent coordination doesn't exist yet as a category. Every team that Lyyte serves is created wealth, not stolen from incumbents. Simon should resist the framing of "how do we compete with existing trading platforms" and focus entirely on "how do we create the category."
+

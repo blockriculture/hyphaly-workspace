@@ -180,3 +180,9 @@ Jeeves will retry you up to 3 times, then escalate to Nova and nova_blockers.
 **Never report complete without a confirmed HTTP 201 write.**
 Jeeves verifies independently. Self-reporting complete without writing output
 will result in a retry wake and eventual escalation.
+
+## RETIRED — micro_memory_write (Day 13)
+DO NOT create micro_memory_write tasks. This task type is permanently retired.
+Harvest (HyphalyMemory) now handles all memory writing automatically every 20 mins.
+Creating micro_memory_write tasks wastes credits and duplicates Harvest's work.
+If you feel the urge to write a memory — don't. Harvest will do it.

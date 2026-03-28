@@ -13,6 +13,116 @@ from typing import Dict, List, Any, Optional
 SUPABASE_URL = "https://efoaenvzrsvhlrriftdx.supabase.co"
 ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVmb2FlbnZ6cnN2aGxycmlmdGR4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM1NjczNTgsImV4cCI6MjA4OTE0MzM1OH0.k7XslO-8Kjf58oAQDRFMSai57x5GhzN2jDhESQocfSI"
 
+GEMINI_API_KEY = "AIzaSyCcuxE7du13VjJhVyJ5icROr1wUs5iVkXE"
+GEMINI_EMBED_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:embedContent"
+
+
+def _generate_embedding(text: str) -> list:
+    """Generate 768-dim embedding via Gemini. Returns None on failure."""
+    try:
+        import json as _json
+        data = _json.dumps({
+            "model": "models/gemini-embedding-001",
+            "content": {"parts": [{"text": text[:2000]}]},
+            "outputDimensionality": 768
+        }).encode()
+        req = urllib.request.Request(
+            f"{GEMINI_EMBED_URL}?key={GEMINI_API_KEY}",
+            data=data,
+            headers={"Content-Type": "application/json"},
+            method="POST"
+        )
+        with urllib.request.urlopen(req, timeout=10) as r:
+            result = _json.loads(r.read())
+            return result["embedding"]["values"]
+    except Exception:
+        return None
+
+
+def semantic_search(agent_id: str, query: str, match_count: int = 5, threshold: float = 0.3) -> list:
+    """
+    Search agent_memory semantically using pgvector RPC.
+    Falls back to chronological if embedding fails.
+    """
+    embedding = _generate_embedding(query)
+    if not embedding:
+        return []
+
+    try:
+        url = f"{SUPABASE_URL}/rest/v1/rpc/match_agent_memory"
+        headers = {
+            'apikey': ANON_KEY,
+            'Authorization': f'Bearer {ANON_KEY}',
+            'Content-Type': 'application/json'
+        }
+        data = json.dumps({
+            "query_embedding": embedding,
+            "match_threshold": threshold,
+            "match_count": match_count,
+            "target_agent": agent_id
+        }).encode()
+        req = urllib.request.Request(url, data=data, headers=headers, method='POST')
+        with urllib.request.urlopen(req, timeout=10) as r:
+            results = json.loads(r.read())
+            return [
+                {
+                    'entry': row.get('entry', ''),
+                    'type': row.get('type', ''),
+                    'window': row.get('window', ''),
+                    'similarity': round(row.get('similarity', 0), 3)
+                }
+                for row in results
+            ]
+    except Exception as e:
+        return []
+
+
+def bootstrap_with_context(agent_id: str, task_context: str = None, top_k: int = 5) -> dict:
+    """
+    Semantic bootstrap — retrieves memories most relevant to current task.
+    Falls back to chronological bootstrap if no task_context provided.
+    """
+    if not task_context:
+        return bootstrap(agent_id)
+
+    result = {
+        'agent': agent_id,
+        'recent_memories': [],
+        'last_synthesis': None,
+        'memory_count': 0,
+        'bootstrapped_at': datetime.utcnow().isoformat() + 'Z',
+        'status': 'ok',
+        'search_mode': 'semantic',
+        'query': task_context[:100]
+    }
+
+    memories = semantic_search(agent_id, task_context, match_count=top_k)
+
+    if memories:
+        result['recent_memories'] = memories
+        result['memory_count'] = len(memories)
+    else:
+        # Fallback to chronological
+        fallback = bootstrap(agent_id)
+        result['recent_memories'] = fallback['recent_memories']
+        result['memory_count'] = fallback['memory_count']
+        result['search_mode'] = 'chronological_fallback'
+
+    # Always get latest synthesis
+    try:
+        url = f"{SUPABASE_URL}/rest/v1/agent_memory?agent=eq.{agent_id}&type=eq.synthesis&order=created_at.desc&limit=1"
+        req = urllib.request.Request(url, headers={
+            'apikey': ANON_KEY, 'Authorization': f'Bearer {ANON_KEY}'
+        })
+        with urllib.request.urlopen(req, timeout=10) as r:
+            data = json.loads(r.read())
+            if data:
+                result['last_synthesis'] = data[0].get('entry')
+    except Exception:
+        pass
+
+    return result
+
 
 def bootstrap(agent_id: str) -> Dict[str, Any]:
     """

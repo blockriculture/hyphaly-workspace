@@ -1,54 +1,37 @@
 # MEMORY.md - Nova's Long-Term Memory
 
-## Strategic Direction (2026-03-24)
-**Hyphaly: Agent Reliability Layer**
-Positioning: Zapier automates tasks. Hyphaly makes agent teams reliable.
+## Strategic Direction
+**Hyphaly:** Agent Reliability Layer — "Zapier automates tasks. Hyphaly makes agent teams reliable."
 Three pillars: COMMS (built) | MEMORY (building) | RESILIENCE (building)
 Moat: Running on live 7-agent org. Every decision battle-tested.
 SDK: /home/simon/hyphaly/src/ | npm install @hyphaly/agent-sdk
-Next: Blockriculture — first dogfood app on full three-pillar SDK.
+Next: Blockriculture — first dogfood app.
 
-## Lyyte: Signal-to-Execution Coordination Layer
-Market: $1.5-2B, semi-pro traders ($50k-$1M capital), 5-20 bots.
-Pain: Signal latency (100-350ms avg), portfolio coordination broken.
-Status: ⏳ VALIDATION PENDING. 5 target leads identified.
+**Lyyte:** Signal-to-Execution Coordination Layer. $1.5-2B market, semi-pro traders. ⏳ VALIDATION PENDING.
 
 ## Model Stack
 Nova (MiniMax M2.7) | Linus (Kimi K2.5) | Clio (GLM-4.7-Flash) | Ada (MiniMax M2.7) | Nico (MiMo-V2-Flash)
 Exclusions: All Mistral, Llama 4 Maverick, Llama 4 Scout
 
 ## Role Structure
-- Nova: Strategy, delegation, founder education
-- Linus: Technical decisions, architecture
-- Ada: Code reviewer (Nico→Ada→Linus chain)
-- Nico: Builder (receives from Linus)
-- Clio: Research + watchdog
-- Reed: Protocol research | Reflects 3:20am
-- Quinn: cron only | Reflects 3:00am
+Nova: Strategy, delegation. Linus: Architecture/technical decisions. Ada: Code reviewer. Nico: Builder. Clio: Research + watchdog. Reed: Protocol research (reflects 3:20am). Quinn: cron only (reflects 3am).
 
 ## Delegation Protocol
-- send_hyphaly.py for all agent messaging. sessions_send RETIRED.
-- message_type='task' for delegation, 'growth_insight' for guidance
-- Linus writes to linus_* tables. Kimi K2.5 in OpenRouter spend = delegation working.
+send_hyphaly.py for all agent messaging. message_type='task' for delegation, 'growth_insight' for guidance. Linus writes to linus_* tables. Kimi K2.5 in OpenRouter spend = delegation working.
 
 ## Infrastructure
-- Supabase: source of truth (reflections, snapshots, tasks)
-- Phase 1 poller: every 5 mins
-- HyphalyGuardian: running every 60s
-- GitHub: github.com/Plainoldsimon/hyphaly
+Supabase (efoaenvzrsvhlrriftdx), Phase 1 poller (5min), HyphalyGuardian (60s), GitHub (Plainoldsimon/hyphaly).
 
 ## Hard Learnings
-- Foundation sprint IS the product — don't treat it as internal tooling
+- Foundation sprint IS the product — don't treat as internal tooling
 - Credentials rotate FIRST — not after
 - Protocol-level moat > feature-level moat
 - CEO confidence: 4/10 — escalate faster
-- Confusion between "not my job" and "not my problem" — watch for it
+- "Not my job" ≠ "not my problem" — watch for it
 - Closing loops when blocked is a choice — inaction has consequences
-- **Proof-before-action pattern**: agents acknowledging tasks without writing to expected output tables causes infinite Jeeves retries. Write to Supabase FIRST, then execute. The write IS the execution.
-- **A2A loop confirmed working** (Day 12 session keys fix) — agent-to-agent coordination now reliable
+- **Proof-before-action**: write to Supabase BEFORE executing. The write IS the execution. Causes infinite Jeeves retries otherwise.
+- A2A loop confirmed working (Day 12 session keys fix)
+- **Production schema verification required before deployment** — Jeeves exp_field bug, nova_blockers schema mismatch, harvest window format T vs dash caused cascade failures. Verify every new daemon against actual Supabase schema before going live.
 
-## Reed Intelligence Pipeline (Standing Procedure)
-- Reed notifies Nova via send_hyphaly.py every time he writes to reed_briefs
-- At 4am reflection: query reed_briefs WHERE created_at > now()-interval '24 hours'
-- Reed → Nova pipeline is automatic
-- Simon receives Reed's emails as COPY, not primary recipient
+## Reed Intelligence Pipeline
+Reed → send_hyphaly.py on every reed_briefs write → Nova queries reed_briefs at 4am reflection. Simon receives Reed emails as COPY.

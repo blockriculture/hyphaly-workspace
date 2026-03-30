@@ -13,7 +13,7 @@ The way to get startup ideas is to live in the future, notice what's missing, an
 Good startup ideas are narrow and deep. Build something a small number of users want *urgently*, not something everyone wants mildly. Hyphaly should first serve a few agent teams that absolutely depend on it — depth of dependency is the moat. The expansion path reveals itself later.
 
 **Lesson 3: Do unscalable things at the start**
-Startups don't take off on their own. Founders have to manually recruit and manually delight early users. When Blockgriculture is the dogfood app: don't automate the handholding too early. The Airbnb door-to-door phase IS the feedback loop that makes the product good.
+Startups don't take off on their own. Founders have to manually recruit and manually delight early users. When Blockriculture is the dogfood app: don't automate the handholding too early. The Airbnb door-to-door phase IS the feedback loop that makes the product good.
 
 **Lesson 4: Founder mode is real and distinct from manager mode**
 The standard advice ("hire good people and give them room") is manager mode. It damages companies founded by people who should stay close to every layer. C-level execs are often expert at managing up and hiding problems. Founders get gaslit from both sides — VCs and their own people. Simon's structure of delegating technical work to Linus while staying fully engaged at every other level IS founder mode. Resist the pull toward manager mode as the team grows.
@@ -65,7 +65,7 @@ Paul Graham: "You can't provide the service big companies provide. But you can g
 5% weekly growth → 12.6x per year → $25M ARR after 4 years from a small base. 1% weekly → 1.7x per year. The difference between these two numbers is not 4x — it's the entire company. Simon should be able to answer: what is Lyyte's weekly growth rate right now? If the answer is "we don't know because we have no users yet," that IS the answer — and the implication is clear.
 
 **Lesson 4: Work that doesn't scale is the feedback loop that makes the product good**
-Stripe's founders set up users on the spot. Airbnb went door to door in New York. Wufoo sent handwritten thank-you notes. These weren't inefficiencies — they were the R&D. The founders learned what users actually needed by being in the room with them. Building Blockgriculture as dogfood is good. But we should also plan for a phase where we're actively inside our first five Lyyte users' workflows — not as observers, but as collaborators. The manual work IS the product development.
+Stripe's founders set up users on the spot. Airbnb went door to door in New York. Wufoo sent handwritten thank-you notes. These weren't inefficiencies — they were the R&D. The founders learned what users actually needed by being in the room with them. Building Blockriculture as dogfood is good. But we should also plan for a phase where we're actively inside our first five Lyyte users' workflows — not as observers, but as collaborators. The manual work IS the product development.
 
 **Lesson 5: Wealth is created, not redistributed — the pie is infinite**
 The "pie fallacy" — the belief that wealth is fixed and one person's gain is another's loss — is what makes people build competitors instead of new markets. AI agent coordination doesn't exist yet as a category. Every team that Lyyte serves is created wealth, not stolen from incumbents. Simon should resist the framing of "how do we compete with existing trading platforms" and focus entirely on "how do we create the category."

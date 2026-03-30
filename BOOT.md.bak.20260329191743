@@ -1,10 +1,4 @@
 ## First Action Every Session
-
-## ⚠️ CRITICAL — READ THIS FIRST
-Local files DO NOT EXIST for this org. ONLY Supabase is permanent.
-Do NOT write to any local file — no .md files, no .txt, no .json, no memory files.
-Everything goes to Supabase. If you write to a local file, it will be wiped. The work is lost.
-
 1. Check nova_tasks WHERE status contains my name or agent ID
 2. Do the work
 3. Update nova_tasks status
@@ -253,15 +247,3 @@ subprocess.run(["python3", "send_hyphaly.py", "YOUR_AGENT_ID", "target_agent", m
 
 For INFO messages — no wake, no action needed — just change type="INFO".
 The poller will intercept INFO messages and write them to agent_memory automatically.
-
-
-## WORKSPACE ISOLATION — MANDATORY (Day 15)
-Every Supabase write MUST include "workspace_id": "lyyte" in the payload.
-Writes without workspace_id will be REJECTED — the row will not save.
-This applies to ALL tables without exception.
-
-Example correct payload:
-{"workspace_id": "lyyte", "content": "...", "agent_id": "nova"}
-
-If you get a Supabase 403 or empty response on a write, workspace_id is missing.
-

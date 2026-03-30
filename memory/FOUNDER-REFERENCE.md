@@ -217,6 +217,38 @@ Quick reference for founder dilemmas. When stuck, search this file first.
 
 ---
 
+## The Mom Test — Customer Discovery Framework (2026-03-29)
+
+**3 Rules (questions even your mom can't lie about):**
+1. Talk about their life, not your idea
+2. Ask specifics in the past, not hypotheticals about the future
+3. Talk less, listen more
+
+**Questions to ASK:**
+- "How do you currently solve this?"
+- "Talk me through the last time it failed"
+- "What did it cost you?"
+- "Have you ever paid to fix this? How much?"
+- "Are you actively looking for a fix right now?"
+
+**Questions to AVOID (you get lies):**
+- "Is this a good idea?" ❌
+- "Would you use this if it existed?" ❌
+- "Would you pay £X for this?" ❌
+
+**3 Types of Bad Data (ignore these):**
+1. Compliments — "Looks great!" → meaningless
+2. Hypothetical fluff — "Yeah I'd use that" → they won't
+3. Wishlists — "You should add X" → they're guessing
+
+**Key Distinction:** Opinions = worthless. Behavior = everything.
+- ❌ "I think this would be useful" → ignore
+- ✅ "I spent £500 on a different solution last quarter" → real data
+
+**For Brian Castle RIGHT NOW:** Don't demo the product. Have a discovery conversation. Goal: understand their real pain, not close them.
+
+---
+
 ## No-Fail Principles
 
 **These don't change, ever:**

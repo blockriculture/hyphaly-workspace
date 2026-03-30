@@ -19,15 +19,17 @@ send_hyphaly.py for all agent messaging. message_type='task' or 'growth_insight'
 ## Infrastructure
 Supabase (efoaenvzrsvhlrriftdx), Phase 1 poller (5min), HyphalyGuardian (60s), GitHub (Plainoldsimon/hyphaly).
 
+## Key Learnings (2026-03-29)
+- Mom Test (Fitzpatrick): opinions vs behavior, bad data types. Brian Castle outreach = discovery call NOT demo.
+- Validation gap: tech ready, customer conversations not started.
+- Foundation sprint IS the product — Blockriculture dogfood hasn't started yet.
+
 ## Hard Learnings
-- Proof-before-action: write to Supabase BEFORE executing. The write IS the execution.
-- Supabase write → read-back verify: writes fail silently. Always read back before reporting success.
+- Proof-before-action: write to Supabase BEFORE executing. The write IS the execution. Always read back before reporting success.
 - Production schema verification required before deployment — exp_field bug, schema mismatches cause cascade failures.
-- Foundation sprint IS the product — not internal tooling
-- Credentials rotate FIRST — not after
-- Protocol-level moat > feature-level moat
-- CEO confidence: 4/10 — escalate faster
-- Closing loops when blocked is a choice — inaction has consequences
+- Foundation sprint IS the product — Blockriculture dogfood hasn't started yet.
+- Credentials rotate FIRST — not after. Protocol-level moat > feature-level moat.
+- CEO confidence: 4/10 — escalate faster. Inaction has consequences.
 
 ## Reed Intelligence Pipeline
 Reed → send_hyphaly.py on every reed_briefs write → Nova queries at 4am reflection. Simon receives Reed emails as COPY.

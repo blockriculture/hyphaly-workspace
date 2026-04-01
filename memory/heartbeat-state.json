@@ -1,9 +1,11 @@
 {
   "lastChecks": {
-    "clio_snapshots": "2026-03-31T00:35:00Z",
-    "clio_commitments": "2026-03-31T00:35:00Z",
-    "memory_check": "2026-03-31T00:35:00Z"
+    "nova_tasks": "2026-03-31T20:32:00Z",
+    "clio_snapshots": "2026-03-31T20:32:00Z",
+    "clio_commitments": "2026-03-31T20:32:00Z",
+    "memory_check": "2026-03-31T03:35:00Z",
+    "morning_briefing": "2026-03-31T10:17:00Z"
   },
   "status": "check_complete",
-  "notes": "00:35 UTC Tuesday. Late night, Simon asleep until 08:00 UTC. Clio last snapshot 3.5h ago (21:08 UTC) — was working, no flag needed. 0 overdue. MEMORY.md 2,367 chars (OK). System quiet."
+  "notes": "20:32 UTC Tuesday. Clio watchdog x2 (18:04, 20:07) \u2014 both clean. 0 overdue. 0 pending. Simon past working hours."
 }

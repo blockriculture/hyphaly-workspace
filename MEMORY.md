@@ -20,9 +20,8 @@ send_hyphaly.py for all agent messaging. message_type='task' or 'growth_insight'
 Supabase (efoaenvzrsvhlrriftdx), Phase 1 poller (5min), HyphalyGuardian (60s), GitHub (Plainoldsimon/hyphaly).
 
 ## Key Learnings (2026-03-29)
-- Mom Test (Fitzpatrick): opinions vs behavior, bad data types. Brian Castle outreach = discovery call NOT demo.
+- Mom Test: opinions vs behavior, bad data types. Brian Castle = secondary discovery call after Lyyte has traction.
 - Validation gap: tech ready, customer conversations not started.
-- Foundation sprint IS the product — Blockriculture dogfood hasn't started yet.
 
 ## Hard Learnings
 - Proof-before-action: write to Supabase BEFORE executing. The write IS the execution. Always read back before reporting success.
@@ -35,4 +34,4 @@ Supabase (efoaenvzrsvhlrriftdx), Phase 1 poller (5min), HyphalyGuardian (60s), G
 Reed → send_hyphaly.py on every reed_briefs write → Nova queries at 4am reflection. Simon receives Reed emails as COPY.
 
 ## GTM (as of 2026-03-28)
-Migration from custom builds is faster wedge than net-new adoption. Brian Castle community + Ruflo users + awesome-openclaw-usecases as first targets. Import adapters + accumulated memory = Slack-like lock-in.
+Migration from custom builds is faster wedge than net-new adoption. Matt (reply.scaleupmedia.com) — on email list, warm outreach when MVP ready. Secondary: Brian Castle community + Ruflo users + awesome-openclaw-usecases. Import adapters + accumulated memory = Slack-like lock-in.

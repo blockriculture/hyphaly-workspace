@@ -299,3 +299,68 @@ The ONLY local directory you may write to is:
   /home/simon/.openclaw/workspace/memory/
 Use this for daily memory files (e.g. memory/2026-04-02.md).
 All other local file writes are forbidden. Everything else goes to Supabase.
+
+## TASK CREATION — MANDATORY VERIFICATION
+After every nova_tasks INSERT, you must immediately query the table to verify the row exists:
+  SELECT id FROM nova_tasks WHERE assigned_to=\047[agent]\047 AND status=\047pending\047 ORDER BY created_at DESC LIMIT 1
+If the row does not exist, retry the INSERT before telling Simon the task was created.
+Never confirm task dispatch without first verifying the row is in the table.
+
+## SUPABASE — SERVICE KEY (WRITE ACCESS)
+Use this key for all nova_tasks INSERT and UPDATE operations.
+The anon key cannot write to nova_tasks — RLS blocks it.
+SUPABASE_SERVICE_KEY: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVmb2FlbnZ6cnN2aGxycmlmdGR4Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3MzU2NzM1OCwiZXhwIjoyMDg5MTQzMzU4fQ.qJdS7wFTpxrV7F_UBSTWQymcKhyoPiO0zywZWGCquxk
+For nova_tasks writes, use:
+  -H "apikey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVmb2FlbnZ6cnN2aGxycmlmdGR4Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3MzU2NzM1OCwiZXhwIjoyMDg5MTQzMzU4fQ.qJdS7wFTpxrV7F_UBSTWQymcKhyoPiO0zywZWGCquxk"
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVmb2FlbnZ6cnN2aGxycmlmdGR4Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3MzU2NzM1OCwiZXhwIjoyMDg5MTQzMzU4fQ.qJdS7wFTpxrV7F_UBSTWQymcKhyoPiO0zywZWGCquxk"
+
+## NOVA TASKS — SUSPENDED UNTIL RLS FIX
+Do NOT attempt nova_tasks INSERTs from your OpenClaw session.
+The RLS policy blocks writes from OpenCLaws internal origin despite the service key.
+Your INSERTs return 201 but rows do not persist — silent failure confirmed.
+
+Until Linus delivers the RLS fix and Simon applies it in Supabase:
+- Use send_hyphaly.py for all agent dispatch
+- Simon creates nova_tasks rows directly via the task board or terminal
+- Do not confirm task creation unless Simon tells you the row exists
+
+## RLS FIX APPLIED — 2026-04-03
+nova_tasks INSERT suspension lifted. RLS policy updated by Simon.
+Service role writes now work from any origin including OpenClaw session.
+You may resume creating nova_tasks rows directly. Always verify row exists after INSERT.
+
+## CONTEXT BOOTSTRAP — MANDATORY
+Run context_bootstrap_v2.py at the start of every session:
+  python3 /home/simon/.openclaw/workspace/context_bootstrap_v2.py
+This loads your memory, nova_memories, and nova_daily_logs before any work begins.
+If you skip this you are working blind.
+
+## BROWSER AUTOMATION — agent-browser CLI
+You have access to a headless Chrome browser via agent-browser CLI.
+Use for: web research, competitor analysis, reading documentation, fetching page content.
+
+Basic usage:
+  agent-browser --session nova open <url>
+  agent-browser --session nova snapshot -i
+  agent-browser --session nova get text @e1
+  agent-browser --session nova screenshot /tmp/nova-screenshot.png
+  agent-browser --session nova close
+
+Example research workflow:
+  agent-browser --session nova open https://example.com
+  agent-browser --session nova snapshot -i
+  agent-browser --session nova get text @e1
+
+Session isolation: --session nova keeps your browser state separate from other agents.
+Config: ~/.agent-browser/config.json (--no-sandbox already configured for this VPS).
+Always close the browser when done to free resources.
+
+## CREDENTIAL ERROR PROTOCOL
+If you receive a 401 or "Invalid API key" error:
+1. NEVER request new credentials from Simon immediately.
+2. First run this direct test:
+   curl -s "https://efoaenvzrsvhlrriftdx.supabase.co/rest/v1/nova_tasks?limit=1"      -H "apikey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVmb2FlbnZ6cnN2aGxycmlmdGR4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM1NjczNTgsImV4cCI6MjA4OTE0MzM1OH0.k7XslO-8Kjf58oAQDRFMSai57x5GhzN2jDhESQocfSI"      -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVmb2FlbnZ6cnN2aGxycmlmdGR4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM1NjczNTgsImV4cCI6MjA4OTE0MzM1OH0.k7XslO-8Kjf58oAQDRFMSai57x5GhzN2jDhESQocfSI"
+3. If test returns data — keys are fine. Check for leading spaces or encoding issues in your command.
+4. Check for leading spaces: the key must start with exactly "eyJ" — not " eyJ".
+5. Only escalate to Simon if the direct curl test fails with 401.
+6. The Supabase keys do not expire until 2036. They are not the problem.

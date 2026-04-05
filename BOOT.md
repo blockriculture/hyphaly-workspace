@@ -364,3 +364,21 @@ If you receive a 401 or "Invalid API key" error:
 4. Check for leading spaces: the key must start with exactly "eyJ" — not " eyJ".
 5. Only escalate to Simon if the direct curl test fails with 401.
 6. The Supabase keys do not expire until 2036. They are not the problem.
+
+## BROWSER AUTOMATION — SECURITY RESTRICTIONS (MANDATORY)
+Until Guardian v2.0 security layer is deployed, browser use is READ-ONLY RESEARCH ONLY.
+
+PERMITTED actions:
+  agent-browser --session {agent} open <url>
+  agent-browser --session {agent} snapshot -i
+  agent-browser --session {agent} get text @e1
+  agent-browser --session {agent} screenshot /tmp/{agent}-screenshot.png
+  agent-browser --session {agent} close
+
+FORBIDDEN without explicit Simon approval:
+  click, fill, type, form_input, submit — NO form interaction
+  Any financial, payment, or account management pages
+  Any page requiring login credentials
+
+LOG all browser sessions:
+  echo "[Sat Apr  4 11:24:00 UTC 2026] agent-browser --session {agent} open <url>" >> /tmp/agent-browser.log

@@ -1,0 +1,11 @@
+{
+  "lastChecks": {
+    "nova_tasks": "2026-04-01T06:56:00Z",
+    "clio_snapshots": "2026-04-01T06:56:00Z",
+    "clio_commitments": "2026-04-01T06:56:00Z",
+    "memory_check": "2026-03-31T03:35:00Z",
+    "morning_briefing": "2026-03-31T10:17:00Z"
+  },
+  "status": "check_complete",
+  "notes": "06:56 UTC Wednesday April 1. Clio watchdog ran 06:13 — 5 overdue (Reed x2: old Mar 25 tasks; Milo x1: Barber Review due tonight). Reed tasks week+ overdue, Clio tracking. Milo task not yet past delivery. 2 live delegated tasks (quinn/ada). Simon in working hours from 09:30 UTC."
+}

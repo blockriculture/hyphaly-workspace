@@ -1,9 +1,9 @@
 {
   "lastChecks": {
-    "nova_tasks": "2026-04-07T00:14:00Z",
-    "clio_snapshots": "2026-04-07T00:14:00Z",
-    "harvest_check": "2026-04-07T00:14:00Z"
+    "nova_tasks": "2026-04-07T21:20:00Z",
+    "clio_snapshots": "2026-04-07T21:20:00Z",
+    "harvest_check": "2026-04-07T03:44:00Z"
   },
-  "status": "check_complete",
-  "notes": "00:14 UTC Tuesday April 7. Quiet hours (23:00-08:00 UTC). Clio active 00:06 UTC ✓. Linus quiet since 19:41 UTC. Realtime Transport still pending — Linus committed but no new updates since 19:38 UTC. No Telegram during quiet hours."
+  "status": "waiting_on_simon",
+  "notes": "21:20 UTC Tuesday April 7. Evening — staying quiet. Clio has no overdue commitments, no recent snapshots. Waiting on Simon for 3 items: (1) sprint column SQL in Supabase, (2) Realtime config on nova_tasks, (3) Qwen 3.6 Plus approval. Sprint 1 essentially complete. Will resume checks tomorrow morning."
 }

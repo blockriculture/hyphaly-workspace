@@ -1,9 +1,10 @@
 {
   "lastChecks": {
-    "nova_tasks": "2026-04-07T21:20:00Z",
-    "clio_snapshots": "2026-04-07T21:20:00Z",
-    "harvest_check": "2026-04-07T03:44:00Z"
+    "nova_tasks": "2026-04-09T00:55:00Z",
+    "clio_snapshots": "2026-04-09T00:55:00Z",
+    "harvest_check": "2026-04-09T00:55:00Z",
+    "reed_brief": "2026-04-09T00:55:00Z"
   },
-  "status": "waiting_on_simon",
-  "notes": "21:20 UTC Tuesday April 7. Evening — staying quiet. Clio has no overdue commitments, no recent snapshots. Waiting on Simon for 3 items: (1) sprint column SQL in Supabase, (2) Realtime config on nova_tasks, (3) Qwen 3.6 Plus approval. Sprint 1 essentially complete. Will resume checks tomorrow morning."
+  "status": "stable",
+  "notes": "System nominal. Broker healthy. 28 receive_hyphaly processes running. Clio quiet (no snapshots since 20:06 UTC — expected overnight). Simon offline (00:55 UTC / 1:55am UK). No action needed."
 }

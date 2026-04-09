@@ -2,7 +2,9 @@
 
 ## Strategic Direction
 **Hyphaly:** Agent Reliability Layer — "Zapier automates tasks. Hyphaly makes agent teams reliable."
-Three pillars: COMMS | MEMORY | RESILIENCE. Moat: live 7-agent org, battle-tested. SDK: /home/simon/hyphaly/src/ | npm install @hyphaly/agent-sdk. Next: Blockriculture dogfooding.
+Three pillars: COMMS | MEMORY | RESILIENCE. Moat: live 7-agent org, battle-tested. SDK: /home/simon/hyphaly/src/ | npm install @hyphaly/agent-sdk.
+
+**Stewton Yews:** Internal headless investment platform. No UI — data analyst that outputs Invest/Exit signals via Telegram. Blockriculture code base being ported as foundation. Sprint 2: Signals & Execution extraction → EOD Thursday.
 
 **Lyyte:** Signal-to-Execution Coordination Layer. $1.5-2B market, semi-pro traders. ⏳ VALIDATION PENDING.
 
@@ -19,15 +21,10 @@ send_hyphaly.py for all agent messaging. message_type='task' or 'growth_insight'
 ## Infrastructure
 Supabase (efoaenvzrsvhlrriftdx), Phase 1 poller (5min), HyphalyGuardian (60s), GitHub (Plainoldsimon/hyphaly).
 
-## Key Learnings (2026-03-29)
-- Mom Test: opinions vs behavior, bad data types. Brian Castle = secondary discovery call after Lyyte has traction.
-- Validation gap: tech ready, customer conversations not started.
-
-## Hard Learnings
-- Proof-before-action: write to Supabase BEFORE executing. The write IS the execution. Always read back before reporting success.
-- Production schema verification required before deployment — exp_field bug, schema mismatches cause cascade failures.
+## Key Learnings
+- Proof-before-action: write to Supabase BEFORE executing. The write IS the execution.
+- Production schema verification required before deployment — exp_field bug causes cascade failures.
 - Foundation sprint IS the product — Blockriculture dogfood hasn't started yet.
-- Credentials rotate FIRST — not after. Protocol-level moat > feature-level moat.
 - CEO confidence: 4/10 — escalate faster. Inaction has consequences.
 
 ## Reed Intelligence Pipeline
@@ -35,3 +32,9 @@ Reed → send_hyphaly.py on every reed_briefs write → Nova queries at 4am refl
 
 ## GTM (as of 2026-03-28)
 Migration from custom builds is faster wedge than net-new adoption. Matt (reply.scaleupmedia.com) — on email list, warm outreach when MVP ready. Secondary: Brian Castle community + Ruflo users + awesome-openclaw-usecases. Import adapters + accumulated memory = Slack-like lock-in.
+
+
+## Market Validation (2026-04-08)
+Claude Code Security Crisis = perfect Hyphaly opening. Anthropic banned 3P Claude Code use + OpenClaw blocked. "They orchestrate. We govern." — LangGraph + Claude Code have security gaps Hyphaly fills (policy enforcement, audit trails, cost tracking, cross-tenant isolation).
+
+A2A Decision: Build BESIDE A2A — Hyphaly is the enterprise governance layer ABOVE A2A. We do not compete with A2A; we own what sits above it.

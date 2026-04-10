@@ -1,10 +1,9 @@
 {
   "lastChecks": {
-    "nova_tasks": "2026-04-09T00:55:00Z",
-    "clio_snapshots": "2026-04-09T00:55:00Z",
-    "harvest_check": "2026-04-09T00:55:00Z",
-    "reed_brief": "2026-04-09T00:55:00Z"
+    "nova_tasks": "2026-04-09T20:43:00Z",
+    "clio_snapshots": "2026-04-09T20:43:00Z",
+    "clio_commitments": "2026-04-09T20:43:00Z"
   },
-  "status": "stable",
-  "notes": "System nominal. Broker healthy. 28 receive_hyphaly processes running. Clio quiet (no snapshots since 20:06 UTC — expected overnight). Simon offline (00:55 UTC / 1:55am UK). No action needed."
+  "status": "clio_silent",
+  "notes": "20:43 UTC \u2014 Clio silent 2.5h (last snapshot 18:07 UTC). Flagged to Simon. 22 pending tasks. Hyphaly broker still down."
 }

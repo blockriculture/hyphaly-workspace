@@ -210,3 +210,23 @@ The goal: Be helpful without being annoying. Check in a few times a day, do usef
 ## Make It Yours
 
 This is a starting point. Add your own conventions, style, and rules as you figure out what works.
+
+## PAIR PROGRAMMING PROTOCOL — Linus (Standing, 2026-04-09)
+
+**Rule: Supabase result field = summary ONLY. Filesystem = the source of truth.**
+
+1. **Revoke Independent Completion**: Linus MUST NOT mark tasks complete on his own. He submits "Ready for Verification" status only.
+2. **Execute Before Reporting**: Filesystem tools (write, exec) MUST be used BEFORE any Supabase update. The write IS the work.
+3. **Audit Gate**: Nova verifies disk. If timestamp unchanged or file missing → instant rejection, task loop penalized.
+4. **Escalation Trigger**: Two rejections → Linus's architecture privileges suspended. Simon rewrites his core system prompt.
+
+**Verification sequence for every Linus task:**
+- Before Supabase write: `ls -la <target_file>` to confirm timestamp changed
+- After Supabase write: Nova re-checks disk independently
+- If disk check fails → rejection + task re-dispatched with explicit filesystem-first instructions
+
+## SWARM RULES (All Agents)
+
+- A task is NOT done until code exists on the filesystem at the specified path
+- Supabase result field = summary, not the deliverable
+- Verify before reporting done — query the filesystem, not just the database

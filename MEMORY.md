@@ -1,12 +1,17 @@
 # MEMORY.md - Nova's Long-Term Memory
 
-## Strategic Direction
-**Hyphaly:** Agent Reliability Layer — "Zapier automates tasks. Hyphaly makes agent teams reliable."
-Three pillars: COMMS | MEMORY | RESILIENCE. Moat: live 7-agent org, battle-tested. SDK: /home/simon/hyphaly/src/ | npm install @hyphaly/agent-sdk.
+## Lyyte Umbrella Structure (2026-04-09)
+**Hyphaly** = THE PRODUCT. Native A2A/H2A messaging infrastructure. Everything runs on it. SDK: /home/simon/hyphaly/src/ | npm install @hyphaly/agent-sdk. Three pillars: COMMS | MEMORY | RESILIENCE.
 
-**Stewton Yews:** Internal headless investment platform. No UI — data analyst that outputs Invest/Exit signals via Telegram. Blockriculture code base being ported as foundation. Sprint 2: Signals & Execution extraction → EOD Thursday.
+**Stewton Yews** = THE MISSION. Internal investment play. First live customer of the Hyphaly engine. Headless — signals and execution only, no UI. Blockriculture codebase is the foundation being ported.
 
-**Lyyte:** Signal-to-Execution Coordination Layer. $1.5-2B market, semi-pro traders. ⏳ VALIDATION PENDING.
+**Blockriculture** = THE FUTURE. B2C play that follows Stewton Yews success. Downstream.
+
+**Decision (2026-04-09):** Unified Hyphaly Broker. Port 5000 becomes the single broker (GET/POST/ACK). Port 8000 FastAPI decommissioned after verification.
+
+**Pair Programming Protocol (2026-04-09):** Linus's independent completion privileges REVOKED. All tasks: write to disk FIRST → verify with `ls -la` → set status "ready_for_verification" → Nova audits disk before marking complete. Two rejections = architecture privileges suspended.
+
+**GitHub Access (2026-04-09):** GITHUB_TOKEN active at /home/simon/hyphaly/.env. Blockriculture repo (Plainoldsimongithub) fully accessible for rip & port to Stewton Yews.
 
 ## Model Stack
 Nova (MiniMax M2.7) | Linus (Kimi K2.5) | Clio (GLM-4.7-Flash) | Ada (MiniMax M2.7) | Nico (MiMo-V2-Flash)

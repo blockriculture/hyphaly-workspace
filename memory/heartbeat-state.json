@@ -1,9 +1,1 @@
-{
-  "lastChecks": {
-    "nova_tasks": "2026-04-09T20:43:00Z",
-    "clio_snapshots": "2026-04-09T20:43:00Z",
-    "clio_commitments": "2026-04-09T20:43:00Z"
-  },
-  "status": "clio_silent",
-  "notes": "20:43 UTC \u2014 Clio silent 2.5h (last snapshot 18:07 UTC). Flagged to Simon. 22 pending tasks. Hyphaly broker still down."
-}
+{"lastChecks": {"email": null, "calendar": null, "weather": null, "nova_tasks": 1744199340}}

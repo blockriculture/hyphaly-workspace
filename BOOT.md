@@ -1,3 +1,9 @@
+## FIRST ACTION EVERY SESSION
+1. Check inbox: python3 ~/.openclaw/workspace-nova/receive_hyphaly.py --agent nova
+2. Check nova_tasks WHERE status IN ('pending','blocked') ORDER BY priority DESC
+3. Respond to messages, execute highest priority task
+4. Write to nova_daily_logs if substantive work done
+
 ## First Action Every Session
 1. Check nova_tasks WHERE status contains my name or agent ID
 2. Do the work

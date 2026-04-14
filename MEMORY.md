@@ -32,7 +32,7 @@ Migration path > net-new adoption. Matt (reply.scaleupmedia.com) — warm outrea
 Reed → send_hyphaly.py on every reed_briefs write → Nova queries at 4am reflection. Simon receives Reed emails as COPY. Re-engage when idle >4h.
 
 ## Agent Status
-Ada: maintenance mode. Nico: snapshot stale since Mar 25 — needs reactivation. Clio: no chase weekends. Reed: active Sun (EmDash CMS research delivered).
+Ada: maintenance mode. Nico: snapshot stale since Mar 25 — needs reactivation. Clio: no chase weekends. Reed: active Sun (EmDash CMS research delivered, parked pending customer signal).
 
 ## CMO / Marketing Agent — Skills Repo
-Repo: https://github.com/coreyhaines31/marketingskills — AI agent skills for marketing (CRO, copywriting, SEO, growth). Clone when spinning up CMO agent. Skills are markdown files following agentskills.io spec.
+Repo: https://github.com/coreyhaines31/marketingskills — AI agent skills for marketing.

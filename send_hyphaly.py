@@ -58,7 +58,7 @@ def send_to_broker(
     # POST to broker
     try:
         response = requests.post(
-            f"{BROKER_URL}/messages",
+            f"{BROKER_URL}/messages/{target_agent_id}",
             json=payload,
             timeout=10
         )

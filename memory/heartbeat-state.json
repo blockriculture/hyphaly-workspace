@@ -1,8 +1,8 @@
 {
   "lastChecks": {
-    "nova_tasks": 1744530834,
-    "clio_snapshots": 1744540000
+    "nova_tasks": 1744644240,
+    "clio_snapshots": 1744644240
   },
-  "currentHeartbeat": "2026-04-13T21:43:00Z",
-  "notes": "Monday 21:43 UTC. Simon offline. Clio alive (watchdog ran 7.7h ago). 3 stale tasks unchanged. Sprint 2 proposal sent in-session this morning, pending Simon's reply. Plan: retry Simon at 8:05am Tue."
+  "currentHeartbeat": "2026-04-14T21:24:00Z",
+  "notes": "Tue 21:24 UTC. Quiet hours approaching (23:00). Clio last snapshot 18:05 UTC — 3h19m silent. End of business day. No pending tasks. Clean exit."
 }

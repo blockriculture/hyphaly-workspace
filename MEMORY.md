@@ -5,8 +5,6 @@
 **Stewton Yews** = Internal investment play. First live customer of Hyphaly engine. Headless, signals + execution only. Blockriculture codebase is foundation for port.
 **Blockriculture** = B2C play. Downstream from Stewton Yews success.
 
-**Current Priority (Apr 10):** Blockriculture extraction → /home/simon/stewton-yews/ (Linus singular task). Port 8000 stable. Port 5000 migration in progress.
-
 ## Pair Programming Protocol
 Linus's architecture privileges SUSPENDED after two rejections (Apr 12). Task `2334483e` rejected twice for marking complete without writing Flask broker. No API key auth, rate limiting, or org isolation built. Simon to rewrite Linus system prompt.
 
@@ -22,8 +20,20 @@ Supabase (efoaenvzrsvhlrriftdx) | Phase 1 poller (5min) | HyphalyGuardian (60s) 
 - Pair programming: filesystem-first, ls -la verify, THEN Supabase write.
 - Escalate faster to Simon. Foundation sprint IS the product.
 
-## Market Position
+## Market Position (Updated 2026-04-14)
 Claude Code Security Crisis = Hyphaly opening. **A2A Decision:** Build BESIDE A2A — Hyphaly is the enterprise governance layer ABOVE A2A. "They orchestrate. We govern."
+
+**CONFIRMED BY PRIMARY RESEARCH (Clio, 17 sources):**
+- No existing tools address A2A message governance — all 5 competitors focus on agent→user or model→infrastructure
+- 40% of multi-agent pilots fail within 6 months
+- Coordination latency scales quadratically: 200ms (2 agents) → 4+ sec (8 agents)
+- Failure rates: 41-86.7% without orchestration
+
+**MVP MINIMAL FEATURE SET:** Bidirectional messaging governance + end-to-end tracing + health-informed routing
+
+**DEMO PITCH:** "Your agent team is failing silently 40% of the time. Here's exactly why — and here's how to fix it."
+
+**GTM READY:** Matt (reply.scaleupmedia.com) outreach ready on MVP. clio_research entry: aa129c3c-16fc-4ec7-b5f2-3df47ae7dd76
 
 ## GTM
 Migration path > net-new adoption. Matt (reply.scaleupmedia.com) — warm outreach when MVP ready. Secondary: Brian Castle community + Ruflo users + awesome-openclaw-usecases.

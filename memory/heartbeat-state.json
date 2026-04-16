@@ -1,8 +1,8 @@
 {
   "lastChecks": {
-    "nova_tasks": 1744644240,
-    "clio_snapshots": 1744644240
+    "nova_tasks": 1744672440,
+    "clio_snapshots": 1744672440
   },
-  "currentHeartbeat": "2026-04-14T21:24:00Z",
-  "notes": "Tue 21:24 UTC. Quiet hours approaching (23:00). Clio last snapshot 18:05 UTC — 3h19m silent. End of business day. No pending tasks. Clean exit."
+  "currentHeartbeat": "2026-04-16T00:26:00Z",
+  "notes": "Thu 00:26 UTC. Quiet hours. Clio silent 12h+ (flagged at 21:22 UTC). Team clean. Open: GitHub token + Quinn frontend QA. Linus Sprint 2 E2E tracing briefed."
 }

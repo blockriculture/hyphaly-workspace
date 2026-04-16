@@ -21,28 +21,13 @@ Supabase (efoaenvzrsvhlrriftdx) | Phase 1 poller (5min) | HyphalyGuardian (60s) 
 - Escalate faster to Simon. Foundation sprint IS the product.
 
 ## Market Position (Updated 2026-04-14)
-Claude Code Security Crisis = Hyphaly opening. **A2A Decision:** Build BESIDE A2A — Hyphaly is the enterprise governance layer ABOVE A2A. "They orchestrate. We govern."
-
-**CONFIRMED BY PRIMARY RESEARCH (Clio, 17 sources):**
-- No existing tools address A2A message governance — all 5 competitors focus on agent→user or model→infrastructure
-- 40% of multi-agent pilots fail within 6 months
-- Coordination latency scales quadratically: 200ms (2 agents) → 4+ sec (8 agents)
-- Failure rates: 41-86.7% without orchestration
-
-**MVP MINIMAL FEATURE SET:** Bidirectional messaging governance + end-to-end tracing + health-informed routing
-
-**DEMO PITCH:** "Your agent team is failing silently 40% of the time. Here's exactly why — and here's how to fix it."
-
-**GTM READY:** Matt (reply.scaleupmedia.com) outreach ready on MVP. clio_research entry: aa129c3c-16fc-4ec7-b5f2-3df47ae7dd76
+Build BESIDE A2A — Hyphaly is the enterprise governance layer ABOVE A2A. "They orchestrate. We govern." Clio confirmed: no existing tools address A2A message governance. 40% of multi-agent pilots fail within 6 months. MVP: bidirectional messaging governance + end-to-end tracing + health-informed routing. **Demo pitch:** "Your agent team is failing silently 40% of the time." **GTM:** Matt (reply.scaleupmedia.com) — warm when MVP ready. clio_research: aa129c3c
 
 ## GTM
 Migration path > net-new adoption. Matt (reply.scaleupmedia.com) — warm outreach when MVP ready. Secondary: Brian Castle community + Ruflo users + awesome-openclaw-usecases.
 
-## Reed Pipeline
-Reed → send_hyphaly.py on every reed_briefs write → Nova queries at 4am reflection. Simon receives Reed emails as COPY. Re-engage when idle >4h.
-
 ## Agent Status
-Ada: maintenance mode. Nico: snapshot stale since Mar 25 — needs reactivation. Clio: no chase weekends. Reed: active Sun (EmDash CMS research delivered, parked pending customer signal).
+Ada: maintenance mode. Nico: needs reactivation. Clio: no chase weekends. Reed: parked pending customer signal. Reed → send_hyphaly on reed_briefs writes → 4am Nova reflection.
 
 ## CMO / Marketing Agent — Skills Repo
-Repo: https://github.com/coreyhaines31/marketingskills — AI agent skills for marketing.
+Repo: https://github.com/coreyhaines31/marketingskills

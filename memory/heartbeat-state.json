@@ -1,8 +1,8 @@
 {
   "lastChecks": {
-    "nova_tasks": 1744723310,
-    "clio_snapshots": 1744723310
+    "nova_tasks": 1744915080,
+    "clio_snapshots": 1744925280
   },
-  "currentHeartbeat": "2026-04-16T16:41:00Z",
-  "notes": "Thu 16:41 UTC. Clio silent 9h (last snapshot 07:35 UTC). Simon already notified at 13:40. No new status change. MEMORY.md 2352 chars."
+  "currentHeartbeat": "2026-04-17T18:08:00Z",
+  "notes": "Fri 18:08 UTC. Clio silent since 04:07 (14h) — Friday evening, no chase. Simon tested messaging successfully 10:07-10:13. Org nominal. Sprint 2 starts Monday 8am."
 }

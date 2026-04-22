@@ -3,7 +3,9 @@
     "email": 1745020800,
     "calendar": null,
     "weather": null,
-    "nova_tasks": 1745234940,
-    "clio_snapshots": 1745234940
+    "nova_tasks": 1745255160,
+    "clio_snapshots": 1745255160,
+    "linus_status": 1745255160,
+    "gateway_health": 1745255160
   }
 }

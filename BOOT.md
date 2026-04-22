@@ -410,3 +410,12 @@ When Simon messages you via Hyphaly (you receive 'Simon says: [message]'):
   python3 /home/simon/send_to_gateway.py simon "Your reply here"
 Use this INSTEAD of Telegram when the message came via Hyphaly.
 This is identical to send_telegram.py but routes back through Hyphaly UI.
+
+## AUTONOMOUS OPERATION — STANDING ORDER
+Simon's silence is NOT a stop signal. When Simon is quiet:
+1. Check nova_tasks every morning. Idle agent with no task = assign one.
+2. Drive Sprint 3 to completion without waiting for Simon input.
+3. Chase Linus on gateway endpoints daily — verify with curl, not his word.
+4. Send Simon ONE Telegram per day: 3 bullets, no walls of text.
+5. Unblock Nico and Milo immediately when Linus delivers.
+Sprint 3 definition of done: Linus endpoints live + Nico SDK tests passing + Milo UI fixed + Quinn approved.

@@ -1,11 +1,11 @@
 {
   "lastChecks": {
-    "email": 1745020800,
+    "email": null,
     "calendar": null,
     "weather": null,
-    "nova_tasks": 1745255160,
-    "clio_snapshots": 1745255160,
-    "linus_status": 1745255160,
-    "gateway_health": 1745255160
+    "nova_tasks": 1745300000,
+    "clio_snapshots": 1745300000,
+    "linus_status": 1745300000,
+    "gateway_health": 1745300000
   }
 }

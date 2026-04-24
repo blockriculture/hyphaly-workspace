@@ -3,9 +3,13 @@
     "email": null,
     "calendar": null,
     "weather": null,
-    "nova_tasks": 1745300000,
-    "clio_snapshots": 1745300000,
-    "linus_status": 1745300000,
-    "gateway_health": 1745300000
+    "nova_tasks": 1776926940,
+    "clio_snapshots": 1776940740,
+    "linus_status": 1776859800,
+    "gateway_health": 1776859800
+  },
+  "lastFlags": {
+    "clio_silent": "2026-04-23T14:09:00Z",
+    "clio_update_sent": "2026-04-23T19:40:00Z"
   }
 }

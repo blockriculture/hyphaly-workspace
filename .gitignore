@@ -1,0 +1,12 @@
+# Sensitive credentials
+BOOT.md
+.env
+*.env
+supabase_service_key.env
+
+# Temp files
+tmp_*.py
+*.tmp
+
+# OS files
+.DS_Store

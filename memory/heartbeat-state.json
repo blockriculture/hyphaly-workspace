@@ -1,15 +1,20 @@
 {
-  "lastChecks": {
-    "email": null,
-    "calendar": null,
-    "weather": null,
-    "nova_tasks": 1776926940,
-    "clio_snapshots": 1776940740,
-    "linus_status": 1776859800,
-    "gateway_health": 1776859800
+  \"lastChecks\": {
+    \"email\": null,
+    \"calendar\": null,
+    \"weather\": null,
+    \"nova_tasks\": 1745499660,
+    \"clio_snapshots\": 1745401260,
+    \"gateway_health\": 1745508540
   },
-  "lastFlags": {
-    "clio_silent": "2026-04-23T14:09:00Z",
-    "clio_update_sent": "2026-04-23T19:40:00Z"
+  \"lastFlags\": {
+    \"clio_silent\": \"2026-04-23T14:09:00Z\",
+    \"clio_update_sent\": \"2026-04-23T19:40:00Z\"
+  },
+  \"thisCheck\": {
+    \"utc\": \"2026-04-25T01:09:00Z\",
+    \"system\": \"healthy\",
+    \"load\": \"0.05\",
+    \"disk\": \"83G free\"
   }
 }

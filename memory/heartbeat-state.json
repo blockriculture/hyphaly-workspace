@@ -1,20 +1,16 @@
 {
-  "lastChecks": {
-    "email": null,
-    "calendar": null,
-    "weather": null,
-    "nova_tasks": 1745630820,
-    "clio_snapshots": 1745601780,
-    "gateway_health": 1745508540
+  \"lastChecks\": {
+    \"clio_snapshots\": 1745760000,
+    \"gateway_health\": 1745760000
   },
-  "lastFlags": {
-    "clio_silent": "2026-04-23T14:09:00Z",
-    "clio_update_sent": "2026-04-23T19:40:00Z"
+  \"lastFlags\": {
+    \"clio_silent\": \"2026-04-27T10:35:00Z\"
   },
-  "thisCheck": {
-    "utc": "2026-04-26T23:03:00Z",
-    "system": "healthy",
-    "load": "minimal",
-    "disk": "83G free"
+  \"thisCheck\": {
+    \"utc\": \"2026-04-28T01:40:00Z\",
+    \"system\": \"healthy\",
+    \"gateway\": \"ok\",
+    \"clio_last_seen\": \"2026-04-24T08:03:13Z\",
+    \"clio_hours_silent\": 65
   }
 }

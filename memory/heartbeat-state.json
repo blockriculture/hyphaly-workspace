@@ -1,1 +1,9 @@
-{"lastChecks": {"email": 1748680620, "calendar": 1748680620, "weather": 1748680620}}
+{
+  "lastChecks": {
+    "email": 1746055200,
+    "calendar": 1746073200,
+    "weather": null,
+    "clio_snapshots": 1746085620,
+    "nova_tasks": 1746093780
+  }
+}

@@ -3,8 +3,9 @@
     "email": 1746055200,
     "calendar": 1746073200,
     "weather": null,
-    "clio_snapshots": 1746101058,
-    "nova_tasks": 1777702433,
+    "clio_snapshots": 1746255180,
+    "nova_tasks": 1746255180,
     "3am_reflection": 1746101058
-  }
+  },
+  "lastHeartbeat": 1746256380
 }

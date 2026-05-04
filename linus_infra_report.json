@@ -157,7 +157,7 @@
           "title": "Exposed API Keys in Source Code",
           "severity": "CRITICAL",
           "description": "OpenRouter API key found in openclaw.json (sk-or-v1-...)",
-          "evidence": "***REMOVED***",
+          "evidence": "[OPENROUTER_KEY_REDACTED]",
           "impact": "Attacker can abuse API quota, cause billing damage",
           "recommendation": "Rotate immediately. Use environment variables or secure vault.",
           "remediation_effort": "HIGH"

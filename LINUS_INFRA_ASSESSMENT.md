@@ -123,7 +123,7 @@ Total Worst Case: $2,000+ USD/month (if API usage spikes)
 
 #### SEC-001: Exposed OpenRouter API Key
 - **Where:** `/home/simon/.openclaw/openclaw.json`
-- **Key:** `***REMOVED***`
+- **Key:** `[OPENROUTER_KEY_REDACTED]`
 - **Impact:** CRITICAL
   - Attacker can make unlimited API calls on your account
   - Could rack up $100s in charges rapidly

@@ -33,8 +33,14 @@ Ada: code reviews. Nico: SDK build. Clio: commitment tracking. Reed: parked. Ree
 ## CMO / Marketing Agent — Skills Repo
 Repo: https://github.com/coreyhaines31/marketingskills
 
-## Sprint Status (Sprint 4)
-- Gateway + Milo UI: COMPLETE ✅ (needs org_credentials migration in Supabase)
-- SDK: delegated to Ada (in progress)
-- Dogfood: blocked — waiting on Simon to apply migration
-- Poller + Jeeves: deferred to future sprint
+## Sprint Status (Sprint 4 — Active)
+- Gateway + Milo UI: COMPLETE ✅ (needs org_credentials migration in Supabase — Simon applying)
+- SDK Client build: delegated to Ada (in progress)
+- Dogfood end-to-end test: PENDING — blocked on Simon applying migration
+- Poller runaway loop fix: PENDING (Linus)
+- Jeeves v2 enforcement: PENDING (Linus)
+- Guardian port bug: delegated to Linus — check_broker hits :5000, should be :8000
+- Sprint 4 task board update: deferred pending dogfood
+
+## Stewton Yews / Dogfood Context
+Stewton Yews runs on this VPS. Port 5000 = tradingview_bridge (Flask, TV webhooks). Port 8000 = Hyphaly broker. Port 8001 = Hyphaly Gateway (auth + messaging API). Dogfood test checklist: DOGFOOD_CHECKLIST.md.

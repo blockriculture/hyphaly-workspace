@@ -1,14 +1,10 @@
 {
   "lastChecks": {
-    "email": null,
-    "calendar": null,
-    "weather": null,
     "clio_snapshots": 1777879380,
     "nova_tasks": 1749203760,
     "3am_reflection": 1749182400,
-    "git_status": 1749203760,
-    "gateway_migration": 1749221640
+    "git_status": 1749203760
   },
-  "lastHeartbeat": 1749221640,
-  "notes": "1:14pm Wed May 6 — Morning briefing sent to Simon (Telegram delivered msg_id 1662). Gateway migration still pending Simon action. Clio: last Mar 17, 0 commitments, no nudge needed. Open tasks: Linus gateway (in_progress), dogfood Quinn (pending), Poller Linus (pending). No changes since last heartbeat."
+  "lastHeartbeat": 1749209040,
+  "notes": "2:44pm Wed May 6 — Afternoon check. Nothing changed since 8:36am. Simon Telegram sent at 8:36am, no response yet. Clio last snapshot Mar 17, 0 commitments. MEMORY.md 2424 chars — under limit."
 }

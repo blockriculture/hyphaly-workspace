@@ -19,26 +19,22 @@ Supabase (efoaenvzrsvhlrriftdx) | Phase 1 poller (5min) | HyphalyGuardian (60s) 
 - Write to Supabase BEFORE executing. The write IS the execution.
 - Pair programming: filesystem-first, ls -la verify, THEN Supabase write.
 - Escalate faster to Simon. Foundation sprint IS the product.
-- Git history rewrite: `git filter-repo --replace-text <patterns.txt> --force` cleans secrets. Re-add origin remote after. Force push.
-- Supabase PATCH/UPDATE requires SERVICE KEY — anon key gets 401. Always use service key for patches.
+- Git history rewrite: `git filter-repo --replace-text --force`. Supabase PATCH requires SERVICE KEY (anon key = 401).
 
-## Market Position (Updated 2026-04-14)
-Build BESIDE A2A — Hyphaly is the enterprise governance layer ABOVE A2A. "They orchestrate. We govern." Clio confirmed: no existing tools address A2A message governance. 40% of multi-agent pilots fail within 6 months. MVP: bidirectional messaging governance + end-to-end tracing + health-informed routing. **Demo pitch:** "Your agent team is failing silently 40% of the time." **GTM:** Matt (reply.scaleupmedia.com) — warm when MVP ready. clio_research: aa129c3c
+## Market Position
+Hyphaly = governance layer ABOVE A2A. "They orchestrate. We govern." 40% of multi-agent pilots fail silently. MVP: messaging governance + end-to-end tracing + health-informed routing. **Demo pitch:** "Your agent team is failing silently 40% of the time." **GTM:** Matt (reply.scaleupmedia.com) — warm when MVP ready.
 
 ## GTM
-Migration path > net-new adoption. Matt (reply.scaleupmedia.com) — warm outreach when MVP ready. Secondary: Brian Castle community + Ruflo users + awesome-openclaw-usecases.
+Migration path > net-new. Matt primary. Secondary: Brian Castle community + Ruflo users.
 
 ## Agent Status
-Ada: active, doing code reviews + daily reflections. Nico: active, Memory Curator build. Clio: active, commitment tracking + inbox digest (last 08:03 UTC today). Reed: parked pending customer signal. Reed → send_hyphaly on reed_briefs writes → 4am Nova reflection.
+Ada: code reviews. Nico: SDK build. Clio: commitment tracking. Reed: parked. Reed → send_hyphaly on reed_briefs → 4am Nova reflection.
 
 ## CMO / Marketing Agent — Skills Repo
 Repo: https://github.com/coreyhaines31/marketingskills
 
-## Sprint Status (Sprint 4 — Active)
-- Linus: Hyphaly Gateway build + deploy — COMPLETE ✅
-- Milo: Blockriculture UI readiness assessment — COMPLETE ✅
-- Nico: Hyphaly SDK Client build — delegated to Ada (in progress)
-- Dogfood: End-to-end test with Stewton Yews — PENDING (needs Simon)
-- Linus: Poller runaway loop fix — PENDING
-- Linus: Jeeves v2 enforcement — PENDING
-- Nova: Sprint 4 task board update — PENDING (me)
+## Sprint Status (Sprint 4)
+- Gateway + Milo UI: COMPLETE ✅ (needs org_credentials migration in Supabase)
+- SDK: delegated to Ada (in progress)
+- Dogfood: blocked — waiting on Simon to apply migration
+- Poller + Jeeves: deferred to future sprint

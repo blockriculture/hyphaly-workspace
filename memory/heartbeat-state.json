@@ -4,9 +4,11 @@
     "calendar": null,
     "weather": null,
     "clio_snapshots": 1777879380,
-    "nova_tasks": 1777947068,
-    "3am_reflection": 1777950671
+    "nova_tasks": 1749203760,
+    "3am_reflection": 1749182400,
+    "git_status": 1749203760,
+    "gateway_migration": 1749221640
   },
-  "lastHeartbeat": 1746443400,
-  "notes": "10:10pm Tue May 5 — Quiet hours approaching (23:00 UTC). Clio flagged 9am, no response. Clio commitments overdue: 0. All clear."
+  "lastHeartbeat": 1749221640,
+  "notes": "1:14pm Wed May 6 — Morning briefing sent to Simon (Telegram delivered msg_id 1662). Gateway migration still pending Simon action. Clio: last Mar 17, 0 commitments, no nudge needed. Open tasks: Linus gateway (in_progress), dogfood Quinn (pending), Poller Linus (pending). No changes since last heartbeat."
 }

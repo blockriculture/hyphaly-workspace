@@ -1,10 +1,9 @@
 {
   "lastChecks": {
+    "nova_tasks": 1749203760,
     "clio_snapshots": 1777879380,
-    "nova_tasks": 1749219840,
-    "3am_reflection": 1749182400,
-    "git_status": 1749203760
+    "3am_reflection": 1749182400
   },
-  "lastHeartbeat": 1749219840,
-  "notes": "3:44pm Wed May 6 — Waiting on Simon to apply migration (no response to 8:36am Telegram). Closed stale Sprint 3 coordination task d516e74a. Clio: last snapshot Mar 17, 0 commitments. Nothing else new."
+  "lastHeartbeat": 1749235560,
+  "notes": "1:46am Thu May 7 — quiet hours (23:00-08:00 UTC). Clio monitoring suspended. Nothing to action."
 }

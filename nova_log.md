@@ -6,3 +6,5 @@
 - Found 0 pending tasks older than 5min
 - Health upsert: HTTP 409 conflict (non-fatal, logged)
 - Agents woken: 0
+[2026-05-08T02:05 UTC] nova_tasks poller: 0 tasks older than 5min, 0 agents woken. Health upsert got HTTP 409 (minor conflict, no impact on polling).
+[2026-05-08 23:35 UTC] nova_tasks_poller_v2_age_filtered: 0 tasks older than 5min, 0 agents woken

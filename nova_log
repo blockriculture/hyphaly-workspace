@@ -1,1 +1,6 @@
 [2026-05-07T22:50:04 UTC] Age-filtered poll: 0 tasks older than 5min, 0 agents woken
+[mailroom] Loaded 6 rules from /home/simon/hyphaly/mailroom_config.json
+[2026-05-08T22:45:16.615802+00:00] Polling nova_tasks (age filter: 5min)...
+  Found 0 pending tasks older than 5min.
+  Error upserting poller_health: Client error HTTP 409: Conflict
+  Poller health recorded: 0 tasks, 0 agents woken
